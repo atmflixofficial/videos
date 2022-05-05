@@ -74,6 +74,9 @@ function get_posts(output){
 	if(page == null || !page){
 		page = 1;
 	}
+	if(check_pwd() == false){
+		return false
+	}
 
 	var api_url = api_base;
 	if(query){
@@ -137,10 +140,22 @@ function output_post(v){
 	html += '</a></div>';
 	return html;
 }	
-if(getCookie('password') !== 1){
-	$('#modal_password').modal('show');
+function check_pwd(){
+	if(getCookie('password') !== 1){
+		$('#modal_password').modal('show');
+		return false;
+	}
+	return true;
 }
 $('#password_confirm').submit(function(e){
 	e.preventDefault();
+	if($('#get_pwd').val() == 'fuck'){
+		setCookie('password',1,24);
+		$('#modal_password').modal('hide');
+		window.location.href = window.location.href;
+		return true;
+	}
+	$('#modal_password .password-error').show();
+
 	
 })
