@@ -145,7 +145,6 @@ var pwd_modal = new bootstrap.Modal(document.getElementById('modal_password'), {
 
 function check_pwd(){
 	var c = getCookie('password');
-	console.log('password')
 	if(c != 1 || c != '1'){
 		pwd_modal.show();
 		return false;
