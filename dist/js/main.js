@@ -71,6 +71,10 @@ function getGet(p){
 	return q==null?'':q;
 }
 function get_post(id,output){
+	if(check_pwd() == false){
+		$(output).html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
+		return false
+	}
 	if(!output){
 		return;
 	}
