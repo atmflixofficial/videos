@@ -56,7 +56,10 @@ a,a:hover,a:focus,a:active{
 .video-list-item .image .featured{
 	display: block;
 }
-
+.SinglePage iframe{
+	width: 100%;
+	height: auto;
+}
 .footer,.footer a {
 	font-size: .8rem;
 }
