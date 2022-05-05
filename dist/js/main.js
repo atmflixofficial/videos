@@ -70,6 +70,19 @@ function getGet(p){
 	var q = url.searchParams.get(p);
 	return q==null?'':q;
 }
+function get_post(id,output){
+	if(!output){
+		return;
+	}
+	if(!id){
+		id = getGet('v');
+	}
+	var api_url = api_base+'/posts/'+id+'?_embed';
+	$.get(api_url,function(d){
+		console.log(d);
+	})
+
+}
 function get_posts(output){
 	if(page == null || !page){
 		page = 1;
