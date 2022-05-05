@@ -144,7 +144,7 @@ function output_post(v){
 var pwd_modal = new bootstrap.Modal(document.getElementById('modal_password'), {})
 
 function check_pwd(){
-	if(getCookie('password') != 1){
+	if(getCookie('password') != 1 || getCookie('password') != '1'){
 		pwd_modal.show();
 		return false;
 	}
