@@ -75,7 +75,7 @@ function get_posts(output){
 		page = 1;
 	}
 	if(check_pwd() == false){
-		$(output).html('<h1 class="text-center my-3">Please Complete Password Verification</h1>')
+		$(output).html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
 		return false
 	}
 
@@ -144,7 +144,9 @@ function output_post(v){
 var pwd_modal = new bootstrap.Modal(document.getElementById('modal_password'), {})
 
 function check_pwd(){
-	if(getCookie('password') != 1 || getCookie('password') != '1'){
+	var c = getCookie('password');
+	console.log('password')
+	if(c != 1 || c != '1'){
 		pwd_modal.show();
 		return false;
 	}
