@@ -171,7 +171,7 @@ function check_pwd(){
 }
 $('#password_confirm').submit(function(e){
 	e.preventDefault();
-	if($('#get_pwd').val() == 'fuck@boobs'){
+	if($('#get_pwd').val() == 'b00bs'){
 		setCookie('password',1,24);
 		pwd_modal.hide();
 
