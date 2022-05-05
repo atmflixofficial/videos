@@ -75,6 +75,7 @@ function get_posts(output){
 		page = 1;
 	}
 	if(check_pwd() == false){
+		$(output).html('Please Complete Password Verification')
 		return false
 	}
 
