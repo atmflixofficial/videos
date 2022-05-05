@@ -75,7 +75,7 @@ function get_posts(output){
 		page = 1;
 	}
 	if(check_pwd() == false){
-		$(output).html('Please Complete Password Verification')
+		$(output).html('<h1 class="text-center my-3">Please Complete Password Verification</h1>')
 		return false
 	}
 
