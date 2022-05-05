@@ -140,9 +140,11 @@ function output_post(v){
 	html += '</a></div>';
 	return html;
 }	
+var pwd_modal = new bootstrap.Modal(document.getElementById('modal_password'), {})
+
 function check_pwd(){
 	if(getCookie('password') !== 1){
-		$('#modal_password').modal('show');
+		pwd_modal.show();
 		return false;
 	}
 	return true;
@@ -151,7 +153,8 @@ $('#password_confirm').submit(function(e){
 	e.preventDefault();
 	if($('#get_pwd').val() == 'fuck'){
 		setCookie('password',1,24);
-		$('#modal_password').modal('hide');
+		pwd_modal.hide();
+
 		window.location.href = window.location.href;
 		return true;
 	}
