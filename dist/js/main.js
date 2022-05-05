@@ -31,6 +31,40 @@ $('.contact-form').submit(function(e){
 		}
 	})
 });
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+    user = prompt("Please enter your name:", "");
+    if (user != "" && user != null) {
+      setCookie("username", user, 365);
+    }
+  }
+}
 function getGet(p){
 	var url = new URL(window.location.href);
 	var q = url.searchParams.get(p);
@@ -97,9 +131,16 @@ function output_post(v){
 	if(v.metadata && v.metadata.duration){
 		duration = v.metadata.duration[0];
 	}
-	var html = '<div class="col-6 col-sm-6 col-md-4 col-lg-2 pe-2 pb-4"><a href="#" class="video-list-item" title="'+v.title.rendered+'">';
+	var html = '<div class="col-6 col-sm-6 col-md-4 col-lg-2 pe-2 pb-4"><a href="/p/watch.html?v='+v.id+'" class="video-list-item" title="'+v.title.rendered+'">';
 	html += '<div class="image">'+output_thumbs(thumb)+'<div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+sec2hour(duration)+'</span></div></div>';
-	html += '<div href="#" class="title" >'+v.title.rendered+'</div>';
+	html += '<div class="title" >'+v.title.rendered+'</div>';
 	html += '</a></div>';
 	return html;
 }	
+if(getCookie('password') !== 1){
+	$('#modal_password').modal('show');
+}
+$('#password_confirm').submit(function(e){
+	e.preventDefault();
+	
+})
