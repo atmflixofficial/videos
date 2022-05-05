@@ -81,7 +81,7 @@ function get_post(id,output){
 	if(!id || id == ''){
 		id = getGet('v');
 	}
-	var api_url = api_base+'/posts/'+id+'?_embed';
+	var api_url = api_base+'posts/'+id+'?_embed';
 	$.get(api_url,function(d){
 		console.log(d);
 	})
