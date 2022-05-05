@@ -74,7 +74,7 @@ function get_post(id,output){
 	if(!output){
 		return;
 	}
-	if(!id){
+	if(!id || id == ''){
 		id = getGet('v');
 	}
 	var api_url = api_base+'/posts/'+id+'?_embed';
