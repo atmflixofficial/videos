@@ -88,7 +88,7 @@ function get_post(id,output){
 	})
 
 }
-function get_posts(output){
+function get_posts(output,cols){
 	if(page == null || !page){
 		page = 1;
 	}
@@ -110,9 +110,9 @@ function get_posts(output){
 			var html = '<div class="row">';
 			$.each(rows,function(k,v){
 				if(query){
-					html += output_post(v._embedded.self[0]);	
+					html += output_post(v._embedded.self[0],cols);	
 				}else{
-					html += output_post(v);
+					html += output_post(v,cols);
 				}
 				
 			});
@@ -145,7 +145,7 @@ function sec2hour(s){
 }	
 
 
-function output_post(v){
+function output_post(v,cols){
 	var thumb='',duration=0;
 	if(v.metadata && v.metadata.thumbs){
 		thumb = v.metadata.thumbs[0];
@@ -153,7 +153,22 @@ function output_post(v){
 	if(v.metadata && v.metadata.duration){
 		duration = v.metadata.duration[0];
 	}
-	var html = '<div class="col-6 col-sm-6 col-md-4 col-lg-2 pe-2 pb-4"><a href="/p/watch.html?v='+v.id+'" class="video-list-item" title="'+v.title.rendered+'">';
+	if(!cols || cols == '' || cols == '0' || cols == 0){
+		cols = 4;
+	}
+	var col = 'col-6 col-sm-6 col-md-5 col-lg-2';
+	if(cols == 1){
+		col = 'col-12';
+	}elseif(cols == 2){
+		col = 'col-6';
+	}elseif(cols == 3){
+		col = 'col-6 col-md-4';
+	}elseif(cols == 4){
+		col = 'col-6 col-sm-6 col-md-3';
+	}elseif(cols == 6){
+		col = 'col-6 col-sm-6 col-md-3 col-lg-2';
+	}
+	var html = '<div class="'+col+' pe-2 pb-4"><a href="/p/watch.html?v='+v.id+'" class="video-list-item" title="'+v.title.rendered+'">';
 	html += '<div class="image">'+output_thumbs(thumb)+'<div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+sec2hour(duration)+'</span></div></div>';
 	html += '<div class="title" >'+v.title.rendered+'</div>';
 	html += '</a></div>';
