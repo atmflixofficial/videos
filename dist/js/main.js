@@ -159,13 +159,13 @@ function output_post(v,cols){
 	var col = 'col-6 col-sm-6 col-md-5 col-lg-2';
 	if(cols == 1){
 		col = 'col-12';
-	}elseif(cols == 2){
+	}else if(cols == 2){
 		col = 'col-6';
-	}elseif(cols == 3){
+	}else if(cols == 3){
 		col = 'col-6 col-md-4';
-	}elseif(cols == 4){
+	}else if(cols == 4){
 		col = 'col-6 col-sm-6 col-md-3';
-	}elseif(cols == 6){
+	}else if(cols == 6){
 		col = 'col-6 col-sm-6 col-md-3 col-lg-2';
 	}
 	var html = '<div class="'+col+' pe-2 pb-4"><a href="/p/watch.html?v='+v.id+'" class="video-list-item" title="'+v.title.rendered+'">';
