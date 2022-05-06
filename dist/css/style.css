@@ -52,7 +52,7 @@ a,a:hover,a:focus,a:active{
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;  
 	overflow: hidden;
-	height: 36px;
+	/*height: 36px;*/
 	padding: 0 .3rem;
 }
 .video-list-item .image .featured{
