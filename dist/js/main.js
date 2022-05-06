@@ -72,7 +72,7 @@ function getGet(p){
 }
 function get_post(id,output){
 	if(check_pwd() == false){
-		$(output).html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
+		$('.site-wrapper').html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
 		return false
 	}
 	if(!output){
@@ -93,7 +93,7 @@ function get_posts(output,cols){
 		page = 1;
 	}
 	if(check_pwd() == false){
-		$(output).html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
+		$('.site-wrapper').html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
 		return false
 	}
 
