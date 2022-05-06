@@ -1,3 +1,9 @@
+window.addEventListener('load',function(){
+	if(check_pwd() == false){
+		$('.site-wrapper').html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
+		return false
+	}	
+})
 $('.current_url').val(window.location.href);
 $('.contact-form').submit(function(e){
 	e.preventDefault();
@@ -71,10 +77,6 @@ function getGet(p){
 	return q==null?'':q;
 }
 function get_post(id,output){
-	if(check_pwd() == false){
-		$('.site-wrapper').html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
-		return false
-	}
 	if(!output){
 		return;
 	}
@@ -92,11 +94,6 @@ function get_posts(output,cols){
 	if(page == null || !page){
 		page = 1;
 	}
-	if(check_pwd() == false){
-		$('.site-wrapper').html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
-		return false
-	}
-
 	var api_url = api_base;
 	if(query){
 		api_url += 'search/'+'?_embed&per_page='+per_page+'&category='+category+'&page='+page+'&search='+query;
