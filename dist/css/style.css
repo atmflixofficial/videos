@@ -85,7 +85,7 @@ a,a:hover,a:focus,a:active{
     background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity));
 }
 .sidebar .widget .widget-content{
-	padding-top:1rem	
+	padding-top:.7rem	
 }
 .sidebar .widget .widget-content img{
 	
