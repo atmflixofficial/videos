@@ -58,6 +58,9 @@ a,a:hover,a:focus,a:active{
 .video-list-item .image .featured{
 	display: block;
 }
+.video-item-col{
+	padding-bottom: 1reml;
+}
 .SinglePage iframe,
 #SinglePage iframe{
 	width: 100%;
@@ -66,6 +69,7 @@ a,a:hover,a:focus,a:active{
 .sidebar .widget{
 	--bs-bg-opacity: .5;
     background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity));
+    margin-bottom:1.5rem;
 }
 
 .sidebar .widget > .title,
