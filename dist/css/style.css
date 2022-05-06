@@ -9,7 +9,9 @@ img{
 a,a:hover,a:focus,a:active{
 	text-decoration: none;
 }
-
+.container{
+	max-width: 1300px;
+}
 .video-list-item{
 	position: relative;
 }
@@ -44,7 +46,7 @@ a,a:hover,a:focus,a:active{
 	vertical-align: middle;
 }
 .video-list-item .title{
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 500;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
