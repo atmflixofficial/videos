@@ -174,6 +174,7 @@ function get_post(id,output){
 	}
 	var api_url = api_base+'posts/'+id+'?_embed';
 	$.get(api_url,function(d){
+		console.log(d)
 		var player = 0;
 		var title = d.title.rendered;
 		var embed = d.metadata.embed;
