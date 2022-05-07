@@ -211,6 +211,7 @@ function get_posts(output,opt){
 		type:'get',
 		dataType: 'json',
 		success:function(d,s,r){
+			console.log(d);
 			var total = r.getResponseHeader('X-WP-Total');
 			if(d.length > 0){
 				var rows = d;
