@@ -180,7 +180,7 @@ function get_post(id,output){
 		var embed = d.metadata.embed;
 		var play = d.metadata.play;
 		var thumb = d._embedded['wp:featuredmedia'][0].source_url;
-		var html = '<div class="video-wrapper">';
+		var html = '<div class="video-wrapper">'; 
 
 		if(embed){
 			html += '<div class="embed">'+embed+'</div>';
