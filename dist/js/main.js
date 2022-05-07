@@ -189,7 +189,7 @@ function get_post(id,output){
 			player = 1;
 		}
 		html += '</div>';
-		$(output).html(d.content.rendered);
+		$(output).html(html);
 		if(player == 1){
 			const player = new Plyr('#player', {
 
