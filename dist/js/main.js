@@ -196,7 +196,7 @@ function get_posts(output,cols,nav){
 		type:'get',
 		dataType: 'json',
 		success:function(d,s,r){
-			console.log(r.getResponseHeader('X-WP-Total'));
+			var total = r.getResponseHeader('X-WP-Total');
 			if(d.length > 0){
 				var rows = d;
 				var html = '<div class="row g-0">';
@@ -210,7 +210,7 @@ function get_posts(output,cols,nav){
 				});
 				html += '</div>';
 				if(nav === true){
-					html += pagination(total,page,url,per_page);
+					html += pagination(total,page,window.location.href,per_page);
 				}
 				$(output).html(html);
 			}
