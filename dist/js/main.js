@@ -196,7 +196,7 @@ function get_posts(output,cols,nav){
 		type:'get',
 		dataType: 'json',
 		success:function(d,s,r){
-			console.log(r.getResponseHeader('some_header'));
+			console.log(r.getResponseHeader('X-WP-Total'));
 			if(d.length > 0){
 				var rows = d;
 				var html = '<div class="row g-0">';
