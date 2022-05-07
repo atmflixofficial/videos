@@ -108,7 +108,7 @@ function pagination(total,page,url,per_page){
     }
     if(page>1){
         var n = parseInt(page)-parseInt(1);
-        var link = '<a hclass="page-link" ref="'+url+'page='+n+'">'+config.prev_link+'</a>';
+        var link = '<a class="page-link" ref="'+url+'page='+n+'">'+config.prev_link+'</a>';
         previous = config.prev_tag_open+link+config.prev_tag_close;
       }
   
