@@ -180,7 +180,7 @@ function get_post(id,output){
 
 }
 function get_posts(output,opt){
-	var perpage = per_page, page = 1, query = '', category = '';
+	var perpage = per_page, page = 1, query = '', category = '', nav = false;
 	if(opt.per_page > 0){
 		perpage = opt.per_page;
 	}
@@ -192,6 +192,9 @@ function get_posts(output,opt){
 	}
 	if(opt.category.length > 0){
 		category = opt.category;
+	}
+	if(opt.nav === true){
+		nav = true;
 	}
 	var api_url = api_base;
 	if(query){
