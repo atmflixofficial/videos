@@ -187,10 +187,10 @@ function get_posts(output,opt){
 	if(opt.page > 1){
 		page = opt.page;
 	}
-	if(opt.query.length > 0){
+	if(opt.query && opt.query.length > 0){
 		query = opt.query;
 	}
-	if(opt.category.length > 0){
+	if(opt.category && opt.category.length > 0){
 		category = opt.category;
 	}
 	if(opt.nav === true){
