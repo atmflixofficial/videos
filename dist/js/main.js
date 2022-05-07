@@ -188,7 +188,7 @@ function get_post(id,output){
 			html += '<div class="atmplayer"><video controls crossorigin playsinline poster="'+thumb+'" id="player"> <source src="'+play+'" type="video/mp4"><a href="'+play+'" download>Download</a> </video></div>';
 			player = 1;
 		}
-		html += '<div class="video-title">'+title+'</div>';
+		html += '<div class="h1 video-title">'+title+'</div>';
 		html += '</div>';
 		$(output).html(html);
 		if(player == 1){
