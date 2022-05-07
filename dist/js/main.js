@@ -249,6 +249,8 @@ function get_posts(output,opt){
 					html += pagination(total,page,app_url+'p/videos.html?',per_page);
 				}
 				$(output).html(html);
+			}else{
+				$(output).html('No data found')
 			}
 		}
 	});
