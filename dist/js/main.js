@@ -205,7 +205,7 @@ function get_posts(output,opt){
 	}else{
 		api_url += 'posts/'+'?_embed&per_page='+perpage+'&category='+category+'&page='+page;
 	}
-
+	console.log(opt);
 	$.ajax({
 		url:api_url,
 		type:'get',
@@ -224,6 +224,7 @@ function get_posts(output,opt){
 					
 				});
 				html += '</div>';
+
 				if(nav === true){
 					html += pagination(total,page,app_url+'p/videos.html?',per_page);
 				}
