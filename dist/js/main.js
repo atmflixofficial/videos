@@ -205,13 +205,11 @@ function get_posts(output,opt){
 	}else{
 		api_url += 'posts/'+'?_embed&per_page='+perpage+'&category='+category+'&page='+page;
 	}
-	console.log(opt);
 	$.ajax({
 		url:api_url,
 		type:'get',
 		dataType: 'json',
 		success:function(d,s,r){
-			console.log(d);
 			var total = r.getResponseHeader('X-WP-Total');
 			if(d.length > 0){
 				var rows = d;
