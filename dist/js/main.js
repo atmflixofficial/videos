@@ -180,7 +180,7 @@ function get_post(id,output){
 
 }
 function get_posts(output,opt){
-	var perpage = per_page, page = 1, query = '', category = '', nav = false;
+	var perpage = per_page, page = 1, query = '', category = '', nav = false, cols = 4;
 	if(opt.per_page > 0){
 		perpage = opt.per_page;
 	}
@@ -195,6 +195,9 @@ function get_posts(output,opt){
 	}
 	if(opt.nav === true){
 		nav = true;
+	}
+	if(opt.cols > 0){
+		cols = opt.cols;
 	}
 	var api_url = api_base;
 	if(query){
