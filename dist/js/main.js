@@ -11,15 +11,15 @@ var pagination_config = {
     last_link:' Last <i class="fa fa-angle-double-right"></i>',
     prev_link:'<i class="fa fa-angle-left"></i> Prev',
     next_link:'Next <i class="fa fa-angle-right"></i>',
-    first_tag_open:'<li>',
+    first_tag_open:'<li class="page-item">',
     first_tag_close:'</li>',
-    last_tag_open:'<li>',
+    last_tag_open:'<li class="page-item">',
     last_tag_close:'</li>',
-    next_tag_open:'<li>',
+    next_tag_open:'<li class="page-item">',
     next_tag_close:'</li>',
-    prev_tag_open:'<li>',
+    prev_tag_open:'<li class="page-item">',
     prev_tag_close:'</li>',
-    curr_tag_open:'<li class="active"><a href="#">',
+    curr_tag_open:'<li class="active"><a href="javascript:void(0)class="page-link" ">',
     curr_tag_close:'</a></li>'
 }
 window.addEventListener('load',function(){
@@ -97,29 +97,29 @@ function pagination(total,page,url,per_page){
       if(i==page){
         links.push(config.curr_tag_open+i+config.curr_tag_close);
       }else{
-        links.push(config.num_tag_open+'<a href="'+link+'">'+i+'</a>'+config.num_tag_close);
+        links.push(config.num_tag_open+'<a class="page-link" href="'+link+'">'+i+'</a>'+config.num_tag_close);
       }
       link='';
     }
     if(page<total_page){
         var n = parseInt(page)+parseInt(1);
-        var link = '<a href="'+url+'page='+n+'">'+config.next_link+'</a>';
+        var link = '<a class="page-link" href="'+url+'page='+n+'">'+config.next_link+'</a>';
         next = config.next_tag_open+link+config.next_tag_close;
     }
     if(page>1){
         var n = parseInt(page)-parseInt(1);
-        var link = '<a href="'+url+'page='+n+'">'+config.prev_link+'</a>';
+        var link = '<a hclass="page-link" ref="'+url+'page='+n+'">'+config.prev_link+'</a>';
         previous = config.prev_tag_open+link+config.prev_tag_close;
       }
   
       if(config.last===true && page<total_page){
-        var link = '<a href="'+url+'page='+total_page+'">'+config.last_link+'</a>';
+        var link = '<a class="page-link" href="'+url+'page='+total_page+'">'+config.last_link+'</a>';
         last = config.last_tag_open+link+config.last_tag_close;
       }else{
         last='';
       }
       if(config.first===true && page>1){
-        var link = '<a href="'+url+'page=1">'+config.first_link+'</a>';
+        var link = '<a class="page-link" href="'+url+'page=1">'+config.first_link+'</a>';
         first = config.first_tag_open+link+config.first_tag_close;
       }else{
         first='';
