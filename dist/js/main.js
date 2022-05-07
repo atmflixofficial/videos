@@ -19,7 +19,7 @@ var pagination_config = {
     next_tag_close:'</li>',
     prev_tag_open:'<li class="page-item">',
     prev_tag_close:'</li>',
-    curr_tag_open:'<li class="active"><a href="javascript:void(0)class="page-link" ">',
+    curr_tag_open:'<li class="active"><a href="javascript:void(0)" class="page-link" ">',
     curr_tag_close:'</a></li>'
 }
 window.addEventListener('load',function(){
