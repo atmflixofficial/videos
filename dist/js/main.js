@@ -1,5 +1,5 @@
 var pagination_config = {
-    per_page:24,
+    per_page:per_page,
     range:2,
     first:true,
     last:true,
@@ -210,7 +210,7 @@ function get_posts(output,cols,nav){
 				});
 				html += '</div>';
 				if(nav === true){
-					html += pagination(total,page,window.location.href,per_page);
+					html += pagination(total,page,app_url+'p/videos.html?',per_page);
 				}
 				$(output).html(html);
 			}
