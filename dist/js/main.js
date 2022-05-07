@@ -179,18 +179,27 @@ function get_post(id,output){
 	})
 
 }
-function get_posts(output,cols,nav){
-	if(page == null || !page){
-		page = 1;
+function get_posts(output,opt){
+	var perpage = per_page, page = 1, query = '', category = '';
+	if(opt.per_page > 0){
+		perpage = opt.per_page;
+	}
+	if(opt.page > 1){
+		page = opt.page;
+	}
+	if(opt.query.length > 0){
+		query = opt.query;
+	}
+	if(opt.category.length > 0){
+		category = opt.category;
 	}
 	var api_url = api_base;
 	if(query){
-		api_url += 'search/'+'?_embed&per_page='+per_page+'&category='+category+'&page='+page+'&search='+query;
+		api_url += 'search/'+'?_embed&per_page='+perpage+'&category='+category+'&page='+page+'&search='+query;
 	}else{
-		api_url += 'posts/'+'?_embed&per_page='+per_page+'&category='+category+'&page='+page;
+		api_url += 'posts/'+'?_embed&per_page='+perpage+'&category='+category+'&page='+page;
 	}
-	var ajax_op = {
-	}
+
 	$.ajax({
 		url:api_url,
 		type:'get',
