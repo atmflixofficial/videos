@@ -194,7 +194,7 @@ function get_posts(output,cols,nav){
 	$.ajax({
 		url:api_url,
 		type:'get',
-		dataType: 'json'
+		dataType: 'json',
 		success:function(d,s,r){
 			console.log(r.getResponseHeader('some_header'));
 			if(d.length > 0){
