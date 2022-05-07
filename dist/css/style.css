@@ -9,6 +9,9 @@ img{
 a,a:hover,a:focus,a:active{
 	text-decoration: none;
 }
+.static-page{
+	padding: 4rem 0;
+}
 .container{
 	max-width: 1300px;
 }
