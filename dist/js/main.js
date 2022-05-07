@@ -174,8 +174,27 @@ function get_post(id,output){
 	}
 	var api_url = api_base+'posts/'+id+'?_embed';
 	$.get(api_url,function(d){
-		console.log(d);
+		var player = 0;
+		var title = d.title.rendered;
+		var embed = d.metadata.embed;
+		var play = d.metadata.play;
+		var thumb = d._embedded['wp:featuredmedia'][0].source_url;
+		var html = '<div class="video-wrapper">';
+
+		if(embed){
+			html += '<div class="embed">'+embed+'</div>';
+		}else if(play){
+			html += '<div class="atmplayer"><video controls crossorigin playsinline poster="'+thumb+'" id="player"> <source src="'+play+'" type="video/mp4"><a href="'+play+'" download>Download</a> </video></div>';
+			player = 1;
+		}
+		html += '</div>';
 		$(output).html(d.content.rendered);
+		if(player == 1){
+			const player = new Plyr('#player', {
+
+			});
+		}
+
 	})
 
 }
