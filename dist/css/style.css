@@ -69,7 +69,9 @@ a,a:hover,a:focus,a:active{
 #SinglePage iframe{
 	width: 100%;
 }
-
+.video-wrapper iframe{
+	max-height: 500px;
+}
 .sidebar .widget{
 	--bs-bg-opacity: .5;
     background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity));
