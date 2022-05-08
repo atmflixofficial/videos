@@ -63,7 +63,8 @@ a,a:hover,a:focus,a:active{
 	display: block;
 }
 .video-item-col{
-	padding-bottom: 1rem;
+
+	padding:0.3rem 0.3rem 1rem 0.3rem;
 }
 .SinglePage iframe,
 #SinglePage iframe{
