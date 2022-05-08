@@ -71,7 +71,7 @@ a,a:hover,a:focus,a:active{
 	width: 100%;
 }
 .video-wrapper iframe,
-.video-wrapper video{
+.video-wrapper {
 	max-height: 500px;
 }
 .sidebar .widget{
