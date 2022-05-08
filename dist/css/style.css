@@ -40,6 +40,7 @@ a,a:hover,a:focus,a:active{
 	overflow: hidden;
 	width: 100%;	
 	display: inline-block;
+	background: #000;
 }
 .video-list-item .image img{
 	width: 100%;
