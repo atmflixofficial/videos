@@ -69,7 +69,8 @@ a,a:hover,a:focus,a:active{
 #SinglePage iframe{
 	width: 100%;
 }
-.video-wrapper iframe{
+.video-wrapper iframe,
+.video-wrapper video{
 	max-height: 500px;
 }
 .sidebar .widget{
