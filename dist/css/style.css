@@ -93,16 +93,21 @@ a,a:hover,a:focus,a:active{
 	font-size: 1.5rem;
 	margin-top: .5rem;
 }
+.dark .nav-tab>a,
 .nav-tabs .nav-link{
 	border: 0;
 	border: 0;
 	border-radius: 0;
-	color: var(--bs-gray-400);
+	color: var(--bs-gray-500);
 }
 .btn-copy,
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus{
 	background: #1c1f23;
+}
+.dark .nav-tab>a:hover{
+	color: var(--bs-gray-500);
+	
 }
 .report-form textarea{
 	height: 150px;
