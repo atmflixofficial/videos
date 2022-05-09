@@ -165,12 +165,12 @@ function getGet(p){
 	var q = url.searchParams.get(p);
 	return q==null?'':q;
 }
-function get_post(id,output){
-	if(!output){
-		return;
-	}
+function get_post(id){
 	if(!id || id == ''){
 		id = getGet('v');
+	}
+	if(!id || id == ''){
+		window.location.href = '/video-not-found';
 	}
 	var api_url = api_base+'posts/'+id+'?_embed';
 	$.get(api_url,function(d){
