@@ -98,7 +98,7 @@ a,a:hover,a:focus,a:active{
 	border: 0;
 	border: 0;
 	border-radius: 0;
-	color: var(--bs-gray-500);
+	color: var(--bs-gray-500)!important;
 }
 .btn-copy,
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,
@@ -106,8 +106,8 @@ a,a:hover,a:focus,a:active{
 	background: #1c1f23;
 }
 .dark .nav-tab>a:hover{
-	color: var(--bs-gray-500);
-	
+	color: var(--bs-gray-500)!important;
+
 }
 .report-form textarea{
 	height: 150px;
