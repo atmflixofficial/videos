@@ -181,6 +181,7 @@ function get_post(id,output){
 		var embed = d.metadata.embed;
 		var play = d.metadata.play;
 		var thumb = d._embedded['wp:featuredmedia'][0].source_url;
+		var cat = d.categories;
 		var video = '';
 		if(embed){
 			video += '<div class="embed">'+embed+'</div>';
@@ -191,6 +192,13 @@ function get_post(id,output){
 		$('#video_play').html(video);
 		$('#video-title').html(title);
 		$('#desc').html(desc);
+		if(cat.length > 0){
+			get_posts('#ouput',{
+				'category':cat.join(','),
+				'per_page':12,
+				'cols':4
+			});
+		}
 		$(output).html('');
 		if(player == 1){
 			const player = new Plyr('#player', {
