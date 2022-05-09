@@ -278,6 +278,9 @@ function get_posts(output,opt){
 			}else{
 				$(output).html('No data found')
 			}
+		},
+		error:function(){
+			$(output).html('failed to load data, please refresh page and try again')
 		}
 	});
 
