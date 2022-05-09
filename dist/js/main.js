@@ -193,7 +193,6 @@ function get_post(id,output){
 		$('#video-title').html(title);
 		$('#desc').html(desc);
 		if(cat.length > 0){
-			console.log(cat)
 			get_posts('#related_posts',{
 				'category':cat.join(','),
 				'per_page':12,
@@ -211,6 +210,7 @@ function get_post(id,output){
 
 }
 function get_posts(output,opt){
+			console.log(opt)
 	var perpage = per_page, page = 1, query = '', category = '', nav = false, cols = 4;
 	if(opt.per_page > 0){
 		perpage = opt.per_page;
