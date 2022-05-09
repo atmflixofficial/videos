@@ -195,6 +195,7 @@ function get_post(id,output){
 		$('#video_play').html(video);
 		$('#video-title').html(title);
 		$('#desc').html(desc);
+		$(output).html('');
 		if(cat.length > 0){
 			get_posts('#related_posts',{
 				'category':cat.join(','),
@@ -202,7 +203,6 @@ function get_post(id,output){
 				'cols':4
 			});
 		}
-		$(output).html('');
 		if(player == 1){
 			const player = new Plyr('#player', {
 				'ratio':'16:9'
