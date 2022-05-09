@@ -221,7 +221,7 @@ function get_posts(output,opt){
 	if(opt.query && opt.query.length > 0){
 		query = opt.query;
 	}
-	if(opt.category && opt.category.length > 0){
+	if(opt.category){
 		category = opt.category;
 	}
 	if(opt.nav === true){
