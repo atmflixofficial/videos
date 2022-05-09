@@ -248,7 +248,7 @@ function get_posts(output,opt){
 	}else{
 		api_url += 'posts/'+'?_embed&per_page='+perpage+'&page='+page;
 	}
-	if(categories){
+	if(category){
 		api_url += '&categories='+category;
 	}
 	$.ajax({
