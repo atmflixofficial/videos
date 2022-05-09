@@ -189,6 +189,9 @@ function get_post(id,output){
 			video += '<div class="atmplayer"><video controls crossorigin playsinline poster="'+thumb+'" id="player"> <source src="'+play+'" type="video/mp4"><a href="'+play+'" download>Download</a> </video></div>';
 			player = 1;
 		}
+		if(!desc || desc == ''){
+			desc = 'For Latest Update, Please join us on WhatsApp and Telegram Channel';
+		}
 		$('#video_play').html(video);
 		$('#video-title').html(title);
 		$('#desc').html(desc);
@@ -258,7 +261,7 @@ function get_posts(output,opt){
 				if(nav === true){
 					html += pagination(total,page,app_url+'p/videos.html?',per_page);
 				}
-				
+
 				$(output).html(html);
 			}else{
 				$(output).html('No data found')
