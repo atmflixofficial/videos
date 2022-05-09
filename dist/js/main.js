@@ -193,7 +193,7 @@ function get_post(id,output){
 		$('#video-title').html(title);
 		$('#desc').html(desc);
 		if(cat.length > 0){
-			get_posts('#ouput',{
+			get_posts('#related_posts',{
 				'category':cat.join(','),
 				'per_page':12,
 				'cols':4
