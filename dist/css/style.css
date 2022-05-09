@@ -82,7 +82,7 @@ a,a:hover,a:focus,a:active{
 }
 .video-wrapper .video-play iframe,
 .video-wrapper .video-play{
-	max-height: 500px;
+	
 }
 .video-wrapper video{
 	max-width: 100%;
