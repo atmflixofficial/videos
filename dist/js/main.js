@@ -199,7 +199,7 @@ function get_post(id,output){
 		if(cat.length > 0){
 			get_posts('#related_posts',{
 				'category':cat[Math.floor(Math.random()*cat.length)],
-				'per_page':18,
+				'per_page':16,
 				'cols':4,
 				'order':'DESC',
 				'orderby':'date'
