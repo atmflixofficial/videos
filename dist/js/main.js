@@ -189,7 +189,7 @@ function get_post(id){
 		if(embed){
 			video += '<div class="embed">'+embed+'</div>';
 		}else if(play){
-			video += '<div class="atmplayer"><video controls crossorigin playsinline poster="'+thumb+'" id="player"> <source src="'+play+'" type="video/mp4"><a href="'+play+'" download>Download</a> </video></div>';
+			video += '<div class="atmplayer"><video data-poster="'+thumb+'" id="player" controls crossorigin playsinline> <source src="'+play+'" type="video/mp4"><a href="'+play+'" download>Download</a> </video></div>';
 			player = 1;
 		}
 		if(!desc || desc == ''){
