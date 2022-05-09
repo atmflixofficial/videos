@@ -192,11 +192,11 @@ function get_post(id,output){
 		if(!desc || desc == ''){
 			desc = 'For Latest Update, Please join us on WhatsApp and Telegram Channel';
 		}
+		//hide current post anywhere in page
+		video += '<style>.'+d.id+'{display:none!important}</style>';
 		$('#video_play').html(video);
 		$('#video-title').html(title);
 		$('#desc').html(desc);
-		//hide current post anywhere in page
-		$(output).html('<style>.'+d.id+'{display:none!important}</style>');
 		if(cat.length > 0){
 			get_posts('#related_posts',{
 				'category':cat[Math.floor(Math.random()*cat.length)],
