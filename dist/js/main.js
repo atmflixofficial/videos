@@ -191,7 +191,7 @@ function get_post(id,output){
 		$('#video_play').html(video);
 		$('#video-title').html(title);
 		$('#desc').html(desc);
-		$(output).html();
+		$(output).html('');
 		if(player == 1){
 			const player = new Plyr('#player', {
 
