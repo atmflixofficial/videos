@@ -321,7 +321,7 @@ function output_post(v,cols){
 	}else if(cols == 6){
 		col = 'col-6 col-sm-6 col-md-3 col-lg-2';
 	}
-	var html = '<div class="'+col+' video-item-col"><a href="/p/watch.html?v='+v.id+'" class="video-list-item" title="'+v.title.rendered+'">';
+	var html = '<div id="'+v.id+'" class="'+col+' video-item-col"><a href="/p/watch.html?v='+v.id+'" class="video-list-item" title="'+v.title.rendered+'">';
 	html += '<div class="image">'+output_thumbs(thumb)+'<div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+sec2hour(duration)+'</span></div></div>';
 	html += '<div class="title" >'+v.title.rendered+'</div>';
 	html += '</a></div>';
