@@ -201,8 +201,8 @@ function get_post(id,output){
 				'category':cat.join(','),
 				'per_page':12,
 				'cols':4,
-				'order':desc,
-				'orderby':date
+				'order':'DESC',
+				'orderby':'date'
 			});
 		}
 		if(player == 1){
