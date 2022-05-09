@@ -198,7 +198,7 @@ function get_post(id,output){
 		$(output).html('');
 		if(cat.length > 0){
 			get_posts('#related_posts',{
-				'category':cat[Math.floor(Math.random()*cat.length)];,
+				'category':cat[Math.floor(Math.random()*cat.length)],
 				'per_page':18,
 				'cols':4,
 				'order':'DESC',
