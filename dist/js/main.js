@@ -210,7 +210,7 @@ function get_post(id,output){
 
 }
 function get_posts(output,opt){
-			console.log(opt)
+
 	var perpage = per_page, page = 1, query = '', category = '', nav = false, cols = 4;
 	if(opt.per_page > 0){
 		perpage = opt.per_page;
@@ -258,6 +258,7 @@ function get_posts(output,opt){
 				if(nav === true){
 					html += pagination(total,page,app_url+'p/videos.html?',per_page);
 				}
+				console.log(html)
 				$(output).html(html);
 			}else{
 				$(output).html('No data found')
