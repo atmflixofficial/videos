@@ -244,9 +244,12 @@ function get_posts(output,opt){
 	}
 	var api_url = api_base;
 	if(query){
-		api_url += 'search/'+'?_embed&per_page='+perpage+'&categories='+category+'&page='+page+'&search='+query+order;
+		api_url += 'search/'+'?_embed&per_page='+perpage+'&page='+page+'&search='+query+order;
 	}else{
-		api_url += 'posts/'+'?_embed&per_page='+perpage+'&categories='+category+'&page='+page;
+		api_url += 'posts/'+'?_embed&per_page='+perpage+'&page='+page;
+	}
+	if(categories){
+		api_url += '&categories='+category;
 	}
 	$.ajax({
 		url:api_url,
