@@ -97,7 +97,7 @@ a,a:hover,a:focus,a:active{
 	border: 0;
 	border: 0;
 	border-radius: 0;
-	color: #495057;
+	color: var(--bs-gray-400);
 }
 .btn-copy,
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,
