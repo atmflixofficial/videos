@@ -258,7 +258,7 @@ function get_posts(output,opt){
 				if(nav === true){
 					html += pagination(total,page,app_url+'p/videos.html?',per_page);
 				}
-				console.log(html)
+				
 				$(output).html(html);
 			}else{
 				$(output).html('No data found')
