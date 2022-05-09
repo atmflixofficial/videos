@@ -200,7 +200,9 @@ function get_post(id,output){
 			get_posts('#related_posts',{
 				'category':cat.join(','),
 				'per_page':12,
-				'cols':4
+				'cols':4,
+				'order':desc,
+				'orderby':date
 			});
 		}
 		if(player == 1){
@@ -214,7 +216,7 @@ function get_post(id,output){
 }
 function get_posts(output,opt){
 
-	var perpage = per_page, page = 1, query = '', category = '', nav = false, cols = 4;
+	var perpage = per_page, page = 1, query = '', category = '', nav = false, cols = 4, order = '';
 	if(opt.per_page > 0){
 		perpage = opt.per_page;
 	}
@@ -233,9 +235,12 @@ function get_posts(output,opt){
 	if(opt.cols > 0){
 		cols = opt.cols;
 	}
+	if(order && orderby){
+		order = '&filter[orderby]='+orderby+'&order='+order;
+	}
 	var api_url = api_base;
 	if(query){
-		api_url += 'search/'+'?_embed&per_page='+perpage+'&category='+category+'&page='+page+'&search='+query;
+		api_url += 'search/'+'?_embed&per_page='+perpage+'&category='+category+'&page='+page+'&search='+query+order;
 	}else{
 		api_url += 'posts/'+'?_embed&per_page='+perpage+'&category='+category+'&page='+page;
 	}
