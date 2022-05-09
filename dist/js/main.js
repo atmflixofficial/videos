@@ -165,7 +165,7 @@ function getGet(p){
 	var q = url.searchParams.get(p);
 	return q==null?'':q;
 }
-function get_post(id,output){
+function get_post(id){
 	if(!output){
 		return;
 	}
@@ -177,20 +177,21 @@ function get_post(id,output){
 		console.log(d)
 		var player = 0;
 		var title = d.title.rendered;
+		var desc = d.content.rendered;
 		var embed = d.metadata.embed;
 		var play = d.metadata.play;
 		var thumb = d._embedded['wp:featuredmedia'][0].source_url;
-		var html = '<div class="video-wrapper">'; 
-
+		var video = '';
 		if(embed){
-			html += '<div class="embed">'+embed+'</div>';
+			video += '<div class="embed">'+embed+'</div>';
 		}else if(play){
-			html += '<div class="atmplayer"><video controls crossorigin playsinline poster="'+thumb+'" id="player"> <source src="'+play+'" type="video/mp4"><a href="'+play+'" download>Download</a> </video></div>';
+			video += '<div class="atmplayer"><video controls crossorigin playsinline poster="'+thumb+'" id="player"> <source src="'+play+'" type="video/mp4"><a href="'+play+'" download>Download</a> </video></div>';
 			player = 1;
 		}
-		html += '<div class="h1 video-title">'+title+'</div>';
-		html += '</div>';
-		$(output).html(html);
+		$('#video_play').html(video);
+		$('#video-title').html(title);
+		$('#desc').html(desc);
+		
 		if(player == 1){
 			const player = new Plyr('#player', {
 

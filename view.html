@@ -12,7 +12,7 @@
 		<link href="./dist/css/fontawesome/all.min.css" rel="stylesheet"/>
 
 		<link href="./dist/css/style.css" rel="stylesheet"/>
-
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=627909f40c0e590023243bcb&product=sop' async='async'></script>
 		<style type="text/css">
 			html,body{
 				background: #121314;
@@ -148,6 +148,18 @@
 					.report-form textarea{
 						height: 150px;
 					}
+					#st-1 .st-btn > svg{
+						width: 25px;
+						height: 25px;
+					}
+					#st-1 .st-btn{
+						padding: 5px;
+						width: 50px;
+    					opacity: 0.5;
+					}
+					#st-1 .st-btn .st-text{
+						white-space: nowrap;
+					}
 				</style>
 				<div class="row">
 					<div class="col-md-12 col-lg-9">
@@ -157,12 +169,12 @@
 
 								</div>
 								<div class="video-header">
-									<div class="video-title h1">
+									<div class="video-title h1" id="video-title">
 										Lorem Ipsum is the dummy text from all time
 									</div>
 									<div class="row">
 										<div class="col-md-6">
-
+											<!-- ShareThis BEGIN --><div class="sharethis-inline-reaction-buttons"></div><!-- ShareThis END -->
 										</div>
 										<div class="col-md-6">
 											<ul class="nav nav-tabs small justify-content-end border-0" id="video-tabs" role="tablist">
@@ -187,7 +199,7 @@
 									</div>	
 									<div class="tab-content my-3" id="myTabContent">
 										<div class="tab-pane fade show active" id="desc" role="tabpanel" aria-labelledby="desc-tab">
-											<div id="video-desc"></div>
+											
 										</div>
 										<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 											<form class="report-form row small" action="">
@@ -221,9 +233,16 @@
 											</form>	
 										</div>
 										<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-											<div class="d-flex my-2">
-												<input type="text" readonly="readonly" class="current_url form-control border-0 rounded-0 bg-dark text-muted" />
-												<button type="button" class="btn rounded-0 btn-dark btn-copy">Copy</button>
+											<div class="row align-items-center">
+												<div class="col-md-9 justify-content-center">
+													<div class="d-flex my-2">
+														<input type="text" readonly="readonly" onclick="this.select()" onblur="this.select()" class="current_url form-control border-0 rounded-0 bg-dark text-muted" />
+														<button type="button" class="btn rounded-0 btn-dark btn-copy">Copy</button>
+													</div>
+												</div>
+												<div class="col-md-3">
+													<!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+												</div>
 											</div>
 										</div>
 									</div>									
