@@ -5,7 +5,7 @@ var pagination_config = {
     last:true,
     full_tag_open:'<ul class="pagination justify-content-center">',
     full_tag_close:'</ul>',
-    num_tag_open:'<li class="d-none d-md-inline-block">',
+    num_tag_open:'<li class="page-item">',
     num_tag_close:'</li>',
     first_link:'<i class="fa fa-angle-double-left"></i>',
     last_link:'<i class="fa fa-angle-double-right"></i>',
@@ -194,7 +194,7 @@ function get_post(id,output){
 		$(output).html('');
 		if(player == 1){
 			const player = new Plyr('#player', {
-
+				'ratio':'16:9'
 			});
 		}
 
