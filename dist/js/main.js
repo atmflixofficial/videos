@@ -175,6 +175,9 @@ function get_post(id){
 	var api_url = api_base+'posts/'+id+'?_embed';
 	$.get(api_url,function(d){
 		console.log(d)
+		if(!d || !d.id){
+			window.location.href = '/video-not-found';
+		}
 		var player = 0;
 		var title = d.title.rendered;
 		var desc = d.content.rendered;
