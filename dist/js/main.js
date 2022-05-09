@@ -195,7 +195,7 @@ function get_post(id,output){
 		$('#video_play').html(video);
 		$('#video-title').html(title);
 		$('#desc').html(desc);
-		$(output).html('');
+		$(output).html('<style>.'+d.id+'{display:none}</style>');
 		if(cat.length > 0){
 			get_posts('#related_posts',{
 				'category':cat[Math.floor(Math.random()*cat.length)],
