@@ -70,8 +70,8 @@ a,a:hover,a:focus,a:active{
 #SinglePage iframe{
 	width: 100%;
 }
-.video-wrapper iframe,
-.video-wrapper {
+.video-wrapper .video-play iframe,
+.video-wrapper .video-play{
 	max-height: 500px;
 }
 .video-wrapper video{
