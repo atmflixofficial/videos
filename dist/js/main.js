@@ -165,7 +165,7 @@ function getGet(p){
 	var q = url.searchParams.get(p);
 	return q==null?'':q;
 }
-function get_post(id){
+function get_post(id,output){
 	if(!output){
 		return;
 	}
@@ -191,7 +191,7 @@ function get_post(id){
 		$('#video_play').html(video);
 		$('#video-title').html(title);
 		$('#desc').html(desc);
-		
+		$(output).html();
 		if(player == 1){
 			const player = new Plyr('#player', {
 
