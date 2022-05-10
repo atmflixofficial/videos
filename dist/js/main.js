@@ -219,7 +219,9 @@ function get_post(id){
 			});
 		}
 
-	})
+	}).fail(function() {
+			window.location.href = '/video-not-found';
+  })
 
 }
 function get_posts(output,opt){
