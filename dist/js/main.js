@@ -40,7 +40,7 @@ $('.contact-form').submit(function(e){
 	$response.html('<i class="fa fa-sync fa-spin"></i>');
 	$btn.attr('disabled',1);
 	$.ajax({
-		url:app_url+'https://api.weforit.com/insert?type=lead',
+		url:'https://api.weforit.com/insert?type=lead',
 		data:$(this).serializeArray(),
 		type:'post',
 		success:function(r){
