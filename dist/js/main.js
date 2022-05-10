@@ -197,7 +197,7 @@ function get_post(id){
 			desc = 'For Latest Update, Please join us on WhatsApp and Telegram Channel';
 		}
 		if(getCookie('is_admin') == 1){
-			title += '<a href="'+edit_link+v.id+'&action=edit" data-id="'+v.id+'" target="_blank" class="ms-3 edit-post"><i class="far fa-edit"></i></a>'
+			title += '<a href="'+edit_link+d.id+'&action=edit" target="_blank" class="ms-3 edit-post"><i class="far fa-edit"></i></a>'
 		}
 		//hide current post anywhere in page
 		video += '<style>.v'+d.id+'{display:none!important}</style>';
