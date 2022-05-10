@@ -331,7 +331,7 @@ function output_post(v,cols){
 	}else if(cols == 6){
 		col = 'col-6 col-sm-6 col-md-3 col-lg-2';
 	}
-	var html = '<div class="'+col+' video-item-col v'+v.id+'"><i class="fa fa-pencil" data-id="'+v.id+'" class="edit-post"></i><a href="/p/watch.html?v='+v.id+'" class="video-list-item" title="'+v.title.rendered+'">';
+	var html = '<div class="'+col+' video-item-col v'+v.id+'"><i class="fa fa-pencil edit-post" data-id="'+v.id+'"></i><a href="/p/watch.html?v='+v.id+'" class="video-list-item" title="'+v.title.rendered+'">';
 	html += '<div class="image">'+output_thumbs(thumb)+'<div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+sec2hour(duration)+'</span></div></div>';
 	html += '<div class="title" >'+v.title.rendered+'</div>';
 	html += '</a></div>';
@@ -345,6 +345,7 @@ function check_pwd(){
 		pwd_modal.show();
 		return false;
 	}
+	//if admin password then show edit icon
 	var is_admin = getCookie('is_admin');
 	if(is_admin == 1 || is_admin == '1'){
 		$('head').append('<style>.edit-post{display:inline-block;}</style>');	
