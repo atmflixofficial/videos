@@ -1,4 +1,5 @@
 var edit_link = 'https://video.portal.irahulsaini.com/wp-admin/post.php?post=';
+var is_admin = getCookie('is_admin');
 var pagination_config = {
     per_page:per_page,
     range:2,
@@ -197,7 +198,7 @@ function get_post(id){
 		if(!desc || desc == ''){
 			desc = 'For Latest Update, Please join us on WhatsApp and Telegram Channel';
 		}
-		if(getCookie('is_admin') == 1){
+		if(is_admin == 1){
 			title += '<a href="'+edit_link+d.id+'&action=edit" target="_blank" class="ms-3 edit-post-single edit-post"><i class="far fa-edit"></i></a>'
 		}
 		//hide current post anywhere in page
@@ -353,7 +354,7 @@ function check_pwd(){
 		return false;
 	}
 	//if admin password then show edit icon
-	var is_admin = getCookie('is_admin');
+	//var is_admin = getCookie('is_admin');
 	if(is_admin == 1 || is_admin == '1'){
 		$('head').append('<style>.edit-post{display:inline-block;}</style>');	
 	}
