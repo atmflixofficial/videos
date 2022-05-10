@@ -38,6 +38,7 @@ a,a:hover,a:focus,a:active{
 	background: #000;
 	display: none;
 	z-index: 1;
+	cursor: pointer;
 }
 .video-list-item{
 	position: relative;
