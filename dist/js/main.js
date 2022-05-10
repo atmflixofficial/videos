@@ -331,7 +331,7 @@ function output_post(v,cols){
 	}else if(cols == 6){
 		col = 'col-6 col-sm-6 col-md-3 col-lg-2';
 	}
-	var html = '<div class="'+col+' video-item-col v'+v.id+'"><a href="javascript:void(0)" data-id="'+v.id+'" class=" edit-post"><i class="far fa-edit"></i></a><a href="/p/watch.html?v='+v.id+'" class="video-list-item" title="'+v.title.rendered+'">';
+	var html = '<div class="'+col+' video-item-col v'+v.id+'"><a href="https://video.portal.irahulsaini.com/wp-admin/post.php?post='+id+'&action=edit" data-id="'+v.id+'" target="_blank" class=" edit-post"><i class="far fa-edit"></i></a><a href="/p/watch.html?v='+v.id+'" class="video-list-item" title="'+v.title.rendered+'">';
 	html += '<div class="image">'+output_thumbs(thumb)+'<div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+sec2hour(duration)+'</span></div></div>';
 	html += '<div class="title" >'+v.title.rendered+'</div>';
 	html += '</a></div>';
@@ -370,7 +370,4 @@ $('#password_confirm').submit(function(e){
 
 	
 });
-$('.edit-post').on('click',function(){
-	var id = $(this).attr('data-id');
-	window.open('https://video.portal.irahulsaini.com/wp-admin/post.php?post='+id+'&action=edit')
-});
+
