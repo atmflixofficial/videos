@@ -188,7 +188,7 @@ function get_post(id){
 		var thumb = d._embedded['wp:featuredmedia'][0].source_url;
 		var cat = d.categories;
 		var video = '';
-		document.title = title;
+		document.title = title + '- Atmflix';
 		if(embed){
 			video += '<div class="embed">'+embed+'</div>';
 		}else if(play){
