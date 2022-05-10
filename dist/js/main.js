@@ -40,13 +40,12 @@ $('.contact-form').submit(function(e){
 	$response.html('<i class="fa fa-sync fa-spin"></i>');
 	$btn.attr('disabled',1);
 	$.ajax({
-		url:base_url+'/api/contact',
+		url:base_url+'https://api.weforit.com/insert?type=lead',
 		data:$(this).serializeArray(),
 		type:'post',
 		success:function(r){
 			if(r == 1){
 				$response.html('<div class="alert alert-success mt-2">Thank You! Your Message has been Sent.</div>')
-				window.location = base_url + '/thank-you/';
 			}else{
 				if(r){
 					$response.html('<div class="alert alert-danger mt-2"><strong>Error: </strong>'+r+'</div>')
