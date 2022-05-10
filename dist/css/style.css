@@ -138,6 +138,7 @@ a,a:hover,a:focus,a:active{
 	color: #fff;
 	background: #000;
 	display: none;
+	z-index: 1;
 }
 .sidebar .widget > .title,
 .sidebar .widget .widget-content{	
