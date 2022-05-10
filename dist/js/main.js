@@ -372,5 +372,5 @@ $('#password_confirm').submit(function(e){
 });
 $('.edit-post').on('click',function(){
 	var id = $(this).attr('data-id');
-	window.open('')
+	window.open('https://video.portal.irahulsaini.com/wp-admin/post.php?post='+id+'&action=edit')
 });
