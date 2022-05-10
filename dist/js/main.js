@@ -331,7 +331,7 @@ function output_post(v,cols){
 	}else if(cols == 6){
 		col = 'col-6 col-sm-6 col-md-3 col-lg-2';
 	}
-	var html = '<div class="'+col+' video-item-col v'+v.id+'"><i class="fa fa-pencil" data-id="'+v.id+'" class="edit-video"></i><a href="/p/watch.html?v='+v.id+'" class="video-list-item" title="'+v.title.rendered+'">';
+	var html = '<div class="'+col+' video-item-col v'+v.id+'"><i class="fa fa-pencil" data-id="'+v.id+'" class="edit-post"></i><a href="/p/watch.html?v='+v.id+'" class="video-list-item" title="'+v.title.rendered+'">';
 	html += '<div class="image">'+output_thumbs(thumb)+'<div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+sec2hour(duration)+'</span></div></div>';
 	html += '<div class="title" >'+v.title.rendered+'</div>';
 	html += '</a></div>';
@@ -345,18 +345,31 @@ function check_pwd(){
 		pwd_modal.show();
 		return false;
 	}
+	var is_admin = getCookie('is_admin');
+	if(is_admin == 1 || is_admin == '1'){
+		$('head').append('<style>.edit-post{display:inline-block;}</style>');	
+	}
+	
 	return true;
 }
 $('#password_confirm').submit(function(e){
 	e.preventDefault();
-	if($('#get_pwd').val() == 'atmflix'){
+	var pwd = $('#get_pwd').val();
+	if(pwd == 'atmflix' || pwd == 'control@admin#portal'){
 		setCookie('password',1,24);
 		pwd_modal.hide();
-
+		if(pwd == 'control@admin#portal'){
+			setCookie('is_admin',1,24);
+		}
 		window.location.href = window.location.href;
+
 		return true;
 	}
 	$('#modal_password .password-error').show();
 
 	
-})
+});
+$('.edit-post').on('click',function(){
+	var id = $(this).attr('data-id');
+	window.open('')
+});
