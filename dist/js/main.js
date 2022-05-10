@@ -44,16 +44,12 @@ $('.contact-form').submit(function(e){
 		data:$(this).serializeArray(),
 		type:'post',
 		success:function(r){
-			if(r == 1){
+			if(r.status == 'success'){
 				$response.html('<div class="alert alert-success mt-2">Thank You! Your Message has been Sent.</div>')
+				$btn.html(btn_val);
 			}else{
-				if(r){
-					$response.html('<div class="alert alert-danger mt-2"><strong>Error: </strong>'+r+'</div>')
-				}else{
-					$response.html('<div class="alert alert-danger mt-2">Unable to Send Message, Please try again later</div>')
-				}
-				
-				$btn.removeAttr('disabled');
+				$response.html('<div class="alert alert-danger">'+r.message+'</div>');				
+				$btn.removeAttr('disabled').html(btn_val);
 			}
 		},
 		error:function(){
