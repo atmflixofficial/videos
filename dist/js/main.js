@@ -222,7 +222,8 @@ function get_post(id){
 
 }
 function get_categories(output,opt){
-	var perpage = per_page, page = 1, category = '', nav = false, cols = 4, order = '';if(opt.per_page > 0){
+	var perpage = per_page, page = 1, category = '', nav = false, cols = 4, order = '';
+	if(opt.per_page > 0){
 		perpage = opt.per_page;
 	}
 	if(opt.page > 1){
@@ -260,7 +261,7 @@ function get_categories(output,opt){
 				html += '</div>';
 
 				if(nav === true){
-					html += pagination(total,page,app_url+'p/categories.html?',per_page);
+					html += pagination(total,page,app_url+'p/categories.html?',perpage);
 				}
 
 				$(output).html(html);
