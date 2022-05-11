@@ -44,9 +44,11 @@ a,a:hover,a:focus,a:active{
 	position: relative;
 	padding: 0 .4rem;
 }
+.category-item-col,
 .video-list-item{
 	position: relative;
 }
+.category-item .category-meta,
 .video-list-item .video-meta{
 	position: absolute;
 	bottom: 0;
@@ -94,6 +96,14 @@ a,a:hover,a:focus,a:active{
 .video-item-col{
 
 	padding:0.3rem 0.3rem 1rem 0.3rem;
+}
+.category-item .category-meta span{
+	display: block;
+
+}
+
+.category-item .category-meta .title{
+	font-size: 1.2rem;
 }
 .SinglePage iframe,
 #SinglePage iframe{
