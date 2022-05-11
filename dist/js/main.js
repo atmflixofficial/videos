@@ -421,7 +421,7 @@ function output_category(v,cols){
 		col = 'col-6 col-sm-6 col-md-3 col-lg-2';
 	}
 	var html = '<div class="'+col+' category-item-col pb-3 category_'+v.id+'"><div class="category-item"><a href="/p/category.html?name='+v.slug+'">';
-	html += '<div class="category-meta"><span class="title">'+v.name+'</span> <span class="count">('+count+')</span></div>';
+	html += '<div class="category-meta"><span class="title">'+v.name+'</span> <span class="count">'+count+' Videos</span></div>';
 	if(thumb){
 		html += '<img src="'+thumb+'"/>';
 	}
