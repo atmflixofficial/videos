@@ -417,7 +417,7 @@ function output_category(v,cols){
 	}else if(cols == 6){
 		col = 'col-6 col-sm-6 col-md-3 col-lg-2';
 	}
-	var html = '<div class="'+col+' category-item-col category_'+v.id+'"><div class="category-item"><a href="/p/category.html?name='+v.slug+'">';
+	var html = '<div class="'+col+' category-item-col pb-3 category_'+v.id+'"><div class="category-item"><a href="/p/category.html?name='+v.slug+'">';
 	html += '<span class="title">'+v.name+'</span> <span class="count float-end">('+count+')</span>';
 	if(thumb){
 		html += '<img src="'+thumb+'"/>';
