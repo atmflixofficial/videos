@@ -221,6 +221,58 @@ function get_post(id){
   })
 
 }
+function get_categories(output,opt){
+	var perpage = per_page, page = 1, category = '', nav = false, cols = 4, order = '';if(opt.per_page > 0){
+		perpage = opt.per_page;
+	}
+	if(opt.page > 1){
+		page = opt.page;
+	}
+	if(opt.query && opt.query.length > 0){
+		query = opt.query;
+	}
+	if(opt.category){
+		category = opt.category;
+	}
+	if(opt.nav === true){
+		nav = true;
+	}
+	if(opt.cols > 0){
+		cols = opt.cols;
+	}
+	if(order && orderby){
+		order = '&filter[orderby]='+orderby+'&order='+order;
+	}
+	var api_url = api_base;
+	api_url += 'categories/'+'?_embed&per_page='+perpage+'&page='+page;
+	$.ajax({
+		url:api_url,
+		type:'get',
+		dataType: 'json',
+		success:function(d,s,r){
+			var total = r.getResponseHeader('X-WP-Total');
+			if(d.length > 0){
+				var rows = d;
+				var html = '<div class="row g-0">';
+				$.each(rows,function(k,v){
+					html += output_category(v,cols);	
+				});
+				html += '</div>';
+
+				if(nav === true){
+					html += pagination(total,page,app_url+'p/categories.html?',per_page);
+				}
+
+				$(output).html(html);
+			}else{
+				$(output).html('No data found')
+			}
+		},
+		error:function(){
+			$(output).html('failed to load data, please refresh page and try again')
+		}
+	});
+}
 function get_posts(output,opt){
 
 	var perpage = per_page, page = 1, query = '', category = '', nav = false, cols = 4, order = '';
@@ -338,6 +390,38 @@ function output_post(v,cols){
 	html += '<div class="image">'+output_thumbs(thumb)+'<div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+sec2hour(duration)+'</span></div></div>';
 	html += '<div class="title" >'+v.title.rendered+'</div>';
 	html += '</a></div>';
+	return html;
+}	
+
+function output_category(v,cols){
+	var thumb='',count=0;
+	if(v.description){
+		thumb = v.description;
+	}
+	if(v.count){
+		count = v.count;
+	}
+	if(!cols || cols == '' || cols == '0' || cols == 0){
+		cols = 4;
+	}
+	var col = 'col-6 col-sm-6 col-md-5 col-lg-2';
+	if(cols == 1){
+		col = 'col-12';
+	}else if(cols == 2){
+		col = 'col-6';
+	}else if(cols == 3){
+		col = 'col-6 col-md-4';
+	}else if(cols == 4){
+		col = 'col-6 col-sm-6 col-md-3';
+	}else if(cols == 6){
+		col = 'col-6 col-sm-6 col-md-3 col-lg-2';
+	}
+	var html = '<div class="'+col+' category-item-col category_'+v.id+'"><div class="category-item"><a href="/p/category.html?name='+v.slug+'">';
+	html += '<span class="count">'+count+'</span><span class="title">'+v.name+'</span>';
+	if(thumb){
+		html += '<img src="'+thumb+'"/>';
+	}
+	html += '</a></div></div>';
 	return html;
 }	
 var pwd_modal = new bootstrap.Modal(document.getElementById('modal_password'), {})
