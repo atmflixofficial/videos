@@ -254,7 +254,7 @@ function get_categories(output,opt){
 			var total = r.getResponseHeader('X-WP-Total');
 			if(d.length > 0){
 				var rows = d;
-				var html = '<div class="row g-0">';
+				var html = '<div class="row">';
 				$.each(rows,function(k,v){
 					html += output_category(v,cols);	
 				});
@@ -418,7 +418,7 @@ function output_category(v,cols){
 		col = 'col-6 col-sm-6 col-md-3 col-lg-2';
 	}
 	var html = '<div class="'+col+' category-item-col category_'+v.id+'"><div class="category-item"><a href="/p/category.html?name='+v.slug+'">';
-	html += '<span class="title">'+v.name+'</span> <span class="count">('+count+')</span>';
+	html += '<span class="title">'+v.name+'</span> <span class="count float-end">('+count+')</span>';
 	if(thumb){
 		html += '<img src="'+thumb+'"/>';
 	}
