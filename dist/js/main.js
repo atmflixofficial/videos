@@ -228,6 +228,8 @@ function get_categories(output,opt){
 	}
 	if(opt.page > 1){
 		page = opt.page;
+	}else{
+		page = getGet('page');
 	}
 	if(opt.query && opt.query.length > 0){
 		query = opt.query;
