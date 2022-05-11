@@ -65,14 +65,14 @@ function param(name) {
 function pagination(total,page,url,per_page){
     var config = pagination_config,start=1,end='',active='',next='',previous='';
     if(!total || !url)
-      return;
+      return '';
   
       if(!per_page || per_page=='undefined'){
       per_page=config.per_page;
       }
   
     if(per_page>total)
-      return;
+      return '';
   
     if(!page || page<1)
       page=1;
