@@ -102,6 +102,9 @@ a,a:hover,a:focus,a:active{
 
 }
 
+.category-item{
+	color: #fff;
+}
 .category-item .category-meta .title{
 	font-size: 1.2rem;
 }
