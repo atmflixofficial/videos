@@ -222,14 +222,14 @@ function get_post(id){
 
 }
 function get_categories(output,opt){
-	var perpage = per_page, page = 1, category = '', nav = false, cols = 4, order = '';
+	var perpage = per_page, page = getGet('page'), category = '', nav = false, cols = 4, order = '';
 	if(opt.per_page > 0){
 		perpage = opt.per_page;
 	}
 	if(opt.page > 1){
 		page = opt.page;
 	}else{
-		page = getGet('page');
+		page = 1
 	}
 	if(opt.query && opt.query.length > 0){
 		query = opt.query;
