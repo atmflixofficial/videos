@@ -256,10 +256,10 @@ function get_categories(output,opt){
 				var rows = d;
 				var html = '<div class="row">';
 				$.each(rows,function(k,v){
-					if(v.count == 0 || v.count == '0'){
-						continue;
+					if(v.count > 0){
+						html += output_category(v,cols);	
 					}
-					html += output_category(v,cols);	
+					
 				});
 				html += '</div>';
 
