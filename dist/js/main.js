@@ -445,7 +445,7 @@ $('#password_confirm').submit(function(e){
 	e.preventDefault();
 	var pwd = $('#get_pwd').val();
 	if(pwd == 'atmflix' || pwd == 'control@admin#portal'){
-		setCookie('password',1,24);
+		setCookie('password',1,6);
 		pwd_modal.hide();
 		if(pwd == 'control@admin#portal'){
 			setCookie('is_admin',1,24);
