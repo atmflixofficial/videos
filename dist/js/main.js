@@ -277,7 +277,7 @@ function get_categories(output,opt){
 		}
 	});
 }
-function get_posts(output,opt){
+function get_posts(output,opt,callback){
 
 	var perpage = per_page, page = 1, query = '', category = '', nav = false, cols = 4, order = '';
 	if(opt.per_page > 0){
@@ -332,7 +332,9 @@ function get_posts(output,opt){
 				if(nav === true){
 					html += pagination(total,page,app_url+'p/videos.html?',per_page);
 				}
-
+				if(callback){
+					callback();
+				}
 				$(output).html(html);
 			}else{
 				$(output).html('No data found')
