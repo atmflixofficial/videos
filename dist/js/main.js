@@ -333,7 +333,7 @@ function get_posts(output,opt,callback){
 					html += pagination(total,page,app_url+'p/videos.html?',per_page);
 				}
 				if(callback){
-					callback();
+					callback({'total':total});
 				}
 				$(output).html(html);
 			}else{
