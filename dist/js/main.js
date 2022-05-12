@@ -331,7 +331,7 @@ function get_posts(output,opt,callback){
 
 				if(nav === true){
 					if(category){
-						html += pagination(total,page,app_url+'p/category.html?',per_page);
+						html += pagination(total,page,app_url+'p/category.html?name='+getGet('name'),per_page);
 					}else{
 						html += pagination(total,page,app_url+'p/videos.html?',per_page);	
 					}
