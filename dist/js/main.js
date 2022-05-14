@@ -146,17 +146,6 @@ function getCookie(cname) {
   return "";
 }
 
-function checkCookie() {
-  let user = getCookie("username");
-  if (user != "") {
-    alert("Welcome again " + user);
-  } else {
-    user = prompt("Please enter your name:", "");
-    if (user != "" && user != null) {
-      setCookie("username", user, 365);
-    }
-  }
-}
 function getGet(p){
 	var url = new URL(window.location.href);
 	var q = url.searchParams.get(p);
@@ -455,10 +444,10 @@ $('#password_confirm').submit(function(e){
 	e.preventDefault();
 	var pwd = $('#get_pwd').val();
 	if(pwd == 'atmflix' || pwd == 'admin@control'){
-		setCookie('password',1,6);
+		setCookie('password',1,0.3);
 		pwd_modal.hide();
 		if(pwd == 'control@admin#portal'){
-			setCookie('is_admin',1,24);
+			setCookie('is_admin',1,1);
 		}
 		window.location.href = window.location.href;
 
