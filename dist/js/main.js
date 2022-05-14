@@ -344,7 +344,7 @@ function get_posts(output, opt, callback) {
 	if (opt.cols > 0) {
 		cols = opt.cols;
 	}
-	params['per_page'] = [perpage];
+	params['per_page'] = perpage;
 	params['page'] = page;
 	if (order && orderby) {
 		params['filter[orderby]'] = orderby;
