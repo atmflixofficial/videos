@@ -97,7 +97,7 @@ function pagination(total, page, url, per_page) {
 	if(!url){
 		url = window.location.href;
 	}
-	params = url2param(window.location.url);
+	params = url2param(window.location.href);
 	if (!per_page || per_page == 'undefined') {
 		per_page = config.per_page;
 	}
