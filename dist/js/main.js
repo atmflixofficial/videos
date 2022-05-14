@@ -253,7 +253,7 @@ function get_post(id) {
 	})
 
 }
-function fetch_category_data(){
+function fetch_category_data(callback){
 
 
 	var api_url = api_base;
@@ -278,8 +278,9 @@ function fetch_category_data(){
 					}
 
 				});
-				console.log(cats)
-				return cats;
+				if(callback){
+					callback()
+				}
 			}
 		}
 	});
