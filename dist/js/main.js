@@ -317,7 +317,7 @@ function get_categories(output, opt) {
 }
 
 function get_posts(output, opt, callback) {
-
+	// /wp-json/wp/v2/posts?filter[meta_key]=duration&filter[orderby]=meta_value_num&order=asc
 	var params = [],
 		perpage = per_page,
 		page = 1,
@@ -344,18 +344,27 @@ function get_posts(output, opt, callback) {
 	if (opt.cols > 0) {
 		cols = opt.cols;
 	}
+	params['per_page'] = [perpage];
+	params['page'] = page;
 	if (order && orderby) {
-		order = '&filter[orderby]=' + orderby + '&order=' + order;
+		params['filter[orderby]='] = orderby;
+		params['order'] = order;
+		//order = '&filter[orderby]=' + orderby + '&order=' + order;
 	}
 	var api_url = api_base;
 	if (query) {
-		api_url += 'search/' + '?_embed&per_page=' + perpage + '&page=' + page + '&search=' + query + order;
+		params['search'] = query;
+		//api_url += 'search/' + '?_embed&per_page=' + perpage + '&page=' + page + '&search=' + query + order;
+		api_url += 'search/';
 	} else {
-		api_url += 'posts/' + '?_embed&per_page=' + perpage + '&page=' + page;
+		api_url += 'posts/';
+		//api_url += 'posts/' + '?_embed&per_page=' + perpage + '&page=' + page;
 	}
 	if (category) {
-		api_url += '&categories=' + category;
+		params['categories'] = category;
+		//api_url += '&categories=' + category;
 	}
+	api_url = $.param(params) + '&_embed';
 	$.ajax({
 		url: api_url,
 		type: 'get',
