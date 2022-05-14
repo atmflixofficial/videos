@@ -279,7 +279,7 @@ function fetch_category_data(callback){
 
 				});
 				if(callback){
-					callback()
+					callback(cats)
 				}
 			}
 		}
