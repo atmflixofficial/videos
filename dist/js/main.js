@@ -123,7 +123,7 @@ function pagination(total, page, url, per_page) {
 	for (i = start; i <= end; i++) {
 		//link = url + 'page=' + i;
 		params.page = i;
-		link = '?'+$.params(params);
+		link = '?'+$.param(params);
 		if (i == page) {
 			links.push(config.curr_tag_open + i + config.curr_tag_close);
 		} else {
@@ -134,21 +134,21 @@ function pagination(total, page, url, per_page) {
 	if (page < total_page) {
 		var n = parseInt(page) + parseInt(1);
 		params.page = n;
-		url = '?'+$.params(params);
+		url = '?'+$.param(params);
 		var link = '<a class="page-link" href="' + url + '">' + config.next_link + '</a>';
 		next = config.next_tag_open + link + config.next_tag_close;
 	}
 	if (page > 1) {
 		var n = parseInt(page) - parseInt(1);
 		params.page = n;
-		url = '?'+$.params(params);
+		url = '?'+$.param(params);
 		var link = '<a class="page-link" href="' + url +'">' + config.prev_link + '</a>';
 		previous = config.prev_tag_open + link + config.prev_tag_close;
 	}
 
 	if (config.last === true && page < total_page) {
 		params.page = total_page;
-		url = '?'+$.params(params);
+		url = '?'+$.param(params);
 		var link = '<a class="page-link" href="' + url + '">' + config.last_link + '</a>';
 		last = config.last_tag_open + link + config.last_tag_close;
 	} else {
@@ -156,7 +156,7 @@ function pagination(total, page, url, per_page) {
 	}
 	if (config.first === true && page > 1) {
 		params.page = 1;
-		url = '?'+$.params(params);
+		url = '?'+$.param(params);
 		var link = '<a class="page-link" href="' + url + '">' + config.first_link + '</a>';
 		first = config.first_tag_open + link + config.first_tag_close;
 	} else {
