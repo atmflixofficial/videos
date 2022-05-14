@@ -97,7 +97,7 @@ function pagination(total, page, url, per_page) {
 	if(!url){
 		url = window.location.href;
 	}
-	params = url2param(url);
+	params = url2param(window.location.url);
 	if (!per_page || per_page == 'undefined') {
 		per_page = config.per_page;
 	}
@@ -377,9 +377,9 @@ function get_posts(output, opt, callback) {
 
 				if (nav === true) {
 					if (category) {
-						html += pagination(total, page, app_url + 'p/category.html?name=' + getGet('name'), per_page);
+						html += pagination(total, page, '', per_page);
 					} else {
-						html += pagination(total, page, app_url + 'p/videos.html?', per_page);
+						html += pagination(total, page, app_url + 'p/videos.html', per_page);
 					}
 
 				}
