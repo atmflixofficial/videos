@@ -364,7 +364,7 @@ function get_posts(output, opt, callback) {
 		params['categories'] = category;
 		//api_url += '&categories=' + category;
 	}
-	api_url = api_url + $.param(params) + '&_embed';
+	api_url = api_url + '?' + $.param(params) + '&_embed';
 	$.ajax({
 		url: api_url,
 		type: 'get',
