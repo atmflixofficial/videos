@@ -253,7 +253,37 @@ function get_post(id) {
 	})
 
 }
+function fetch_category_data(){
 
+
+	var api_url = api_base;
+	api_url += 'categories/' + '?_embed&per_page=100';
+	$.ajax({
+		url: api_url,
+		type: 'get',
+		dataType: 'json',
+		success: function (d, s, r) {
+			var total = r.getResponseHeader('X-WP-Total');
+			if (d.length > 0) {
+				var rows = d;
+				var cats = [];
+				$.each(rows, function (k, v) {
+					if (v.count > 0) {
+						var cat = {
+							'name' : ,
+							'thumb': ,
+							'count': ,
+						};
+						cats.push(cat)
+					}
+
+				});
+				return cats;
+			}
+		}
+	});
+
+}
 function get_categories(output, opt) {
 	var perpage = per_page,
 		page = 1,
