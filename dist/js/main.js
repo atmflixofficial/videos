@@ -83,7 +83,7 @@ function url2param(url){
 	return param;
 }
 
-function pagination(total, page, url, per_page) {
+function pagination(total, page, page_url, per_page) {
 	var config = pagination_config,
 		start = 1,
 		end = '',
@@ -94,8 +94,8 @@ function pagination(total, page, url, per_page) {
 	if (!total)
 		return '';
 
-	if(!url){
-		url = window.location.href;
+	if(!page_url){
+		page_url = window.location.href;
 	}
 	params = url2param(window.location.href);
 	if (!per_page || per_page == 'undefined') {
@@ -123,7 +123,7 @@ function pagination(total, page, url, per_page) {
 	for (i = start; i <= end; i++) {
 		//link = url + 'page=' + i;
 		params.page = i;
-		link = '?'+$.param(params);
+		link = page_url + '?'+$.param(params);
 		if (i == page) {
 			links.push(config.curr_tag_open + i + config.curr_tag_close);
 		} else {
@@ -134,21 +134,21 @@ function pagination(total, page, url, per_page) {
 	if (page < total_page) {
 		var n = parseInt(page) + parseInt(1);
 		params.page = n;
-		url = '?'+$.param(params);
+		url = page_url + '?'+$.param(params);
 		var link = '<a class="page-link" href="' + url + '">' + config.next_link + '</a>';
 		next = config.next_tag_open + link + config.next_tag_close;
 	}
 	if (page > 1) {
 		var n = parseInt(page) - parseInt(1);
 		params.page = n;
-		url = '?'+$.param(params);
+		url = page_url + '?'+$.param(params);
 		var link = '<a class="page-link" href="' + url +'">' + config.prev_link + '</a>';
 		previous = config.prev_tag_open + link + config.prev_tag_close;
 	}
 
 	if (config.last === true && page < total_page) {
 		params.page = total_page;
-		url = '?'+$.param(params);
+		url = page_url + '?'+$.param(params);
 		var link = '<a class="page-link" href="' + url + '">' + config.last_link + '</a>';
 		last = config.last_tag_open + link + config.last_tag_close;
 	} else {
@@ -156,7 +156,7 @@ function pagination(total, page, url, per_page) {
 	}
 	if (config.first === true && page > 1) {
 		params.page = 1;
-		url = '?'+$.param(params);
+		url = page_url + '?'+$.param(params);
 		var link = '<a class="page-link" href="' + url + '">' + config.first_link + '</a>';
 		first = config.first_tag_open + link + config.first_tag_close;
 	} else {
