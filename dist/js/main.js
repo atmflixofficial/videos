@@ -318,7 +318,7 @@ function get_categories(output, opt) {
 
 function get_posts(output, opt, callback) {
 	// /wp-json/wp/v2/posts?filter[meta_key]=duration&filter[orderby]=meta_value_num&order=asc
-	var params = [],
+	var params = {},
 		perpage = per_page,
 		page = 1,
 		query = '',
