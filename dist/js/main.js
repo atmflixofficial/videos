@@ -270,6 +270,7 @@ function fetch_category_data(callback){
 				$.each(rows, function (k, v) {
 					if (v.count > 0) {
 						var cat = {
+							'id'	  : v.id,
 							'name' : v.name,
 							'thumb': v.description,
 							'count': v.count,
