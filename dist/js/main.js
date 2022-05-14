@@ -335,7 +335,7 @@ function get_categories(output, opt) {
 				html += '</div>';
 
 				if (nav === true) {
-					html += pagination(total, page, app_url + 'p/categories.html?', perpage);
+					html += pagination(total, page, app_url + 'p/category.html?', perpage);
 				}
 
 				$(output).html(html);
