@@ -347,7 +347,7 @@ function get_posts(output, opt, callback) {
 	params['per_page'] = [perpage];
 	params['page'] = page;
 	if (order && orderby) {
-		params['filter[orderby]='] = orderby;
+		params['filter[orderby]'] = orderby;
 		params['order'] = order;
 		//order = '&filter[orderby]=' + orderby + '&order=' + order;
 	}
