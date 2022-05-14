@@ -274,6 +274,7 @@ function fetch_category_data(callback){
 							'name' : v.name,
 							'thumb': v.description,
 							'count': v.count,
+							'slug' : v.slug
 						};
 						cats.push(cat)
 					}
