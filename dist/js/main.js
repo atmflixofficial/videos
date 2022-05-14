@@ -270,9 +270,9 @@ function fetch_category_data(){
 				$.each(rows, function (k, v) {
 					if (v.count > 0) {
 						var cat = {
-							'name' : ,
-							'thumb': ,
-							'count': ,
+							'name' : v.name,
+							'thumb': v.description,
+							'count': v.count,
 						};
 						cats.push(cat)
 					}
