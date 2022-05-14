@@ -278,6 +278,7 @@ function fetch_category_data(){
 					}
 
 				});
+				console.log(cats)
 				return cats;
 			}
 		}
