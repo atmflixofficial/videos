@@ -95,7 +95,7 @@ function pagination(total, page, page_url, per_page) {
 		return '';
 
 	if(!page_url){
-		page_url = window.location.href;
+		page_url = (window.location.href).split('?')[0];
 	}
 	params = url2param(window.location.href);
 	if (!per_page || per_page == 'undefined') {
