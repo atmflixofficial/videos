@@ -347,8 +347,13 @@ function get_posts(output, opt, callback) {
 	params['per_page'] = perpage;
 	params['page'] = page;
 	if (order && orderby) {
-		params['filter[orderby]'] = orderby;
-		params['order'] = order;
+		if(orderby == 'duration'){
+			params['filter[meta_key]'] = 'duration';
+			params['filter[orderby]'] = 'meta_value_num';
+		}else{
+			params['filter[orderby]'] = orderby;
+		}
+		params['order'] = order;	
 		//order = '&filter[orderby]=' + orderby + '&order=' + order;
 	}
 	var api_url = api_base;
