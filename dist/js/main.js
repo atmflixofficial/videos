@@ -325,7 +325,8 @@ function get_posts(output, opt, callback) {
 		category = '',
 		nav = false,
 		cols = 4,
-		order = '';
+		order = '',
+		orderby = '';
 	if (opt.per_page > 0) {
 		perpage = opt.per_page;
 	}
@@ -343,6 +344,12 @@ function get_posts(output, opt, callback) {
 	}
 	if (opt.cols > 0) {
 		cols = opt.cols;
+	}
+	if(opt.order){
+		order = opt.order;
+	}
+	if(opt.orderby){
+		orderby = opt.orderby;
 	}
 	params['per_page'] = perpage;
 	params['page'] = page;
