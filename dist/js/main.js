@@ -2,7 +2,7 @@ var edit_link = 'https://video.portal.irahulsaini.com/wp-admin/post.php?post=';
 var is_admin = getCookie('is_admin');
 var salt = '123';
 //get param from url and set input fields
-var inputs = url2param(url);
+var inputs = url2param(window.location.href);
 $.each(inputs,function(k,v){
 	$('[name="'+k+'"]').val(v);
 })
