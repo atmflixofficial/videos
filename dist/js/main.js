@@ -1,11 +1,6 @@
 var edit_link = 'https://video.portal.irahulsaini.com/wp-admin/post.php?post=';
 var is_admin = getCookie('is_admin');
 var salt = '123';
-//get param from url and set input fields
-var inputs = url2param(window.location.href);
-$.each(inputs,function(k,v){
-	$('[name="'+k+'"]').val(v);
-})
 
 var pagination_config = {
 	per_page: per_page,
@@ -88,6 +83,13 @@ function url2param(url){
 		return param;
 	}
 	return param;
+}
+function set_inputs(){
+	//get param from url and set input fields
+	var inputs = url2param(window.location.href);
+	$.each(inputs,function(k,v){
+		$('[name="'+k+'"]').val(v);
+	});
 }
 
 function pagination(total, page, page_url, per_page) {
