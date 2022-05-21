@@ -1,6 +1,12 @@
 var edit_link = 'https://video.portal.irahulsaini.com/wp-admin/post.php?post=';
 var is_admin = getCookie('is_admin');
 var salt = '123';
+//get param from url and set input fields
+var inputs = url2param(url);
+$.each(input,function(k,v){
+	$('[name="'+k+'"]').val(v);
+})
+
 var pagination_config = {
 	per_page: per_page,
 	range: 2,
@@ -30,7 +36,8 @@ window.addEventListener('load', function () {
 		$('.site-wrapper').html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
 		return false
 	}
-})
+});
+
 $('.current_url').val(window.location.href);
 $('.contact-form').submit(function (e) {
 	e.preventDefault();
@@ -63,7 +70,6 @@ $('.contact-form').submit(function (e) {
 function param(name) {
 	return (location.search.split(name + '=')[1] || '').split('&')[0];
 }
-
 function url2param(url){
 	var param = {};
 	if(!url){
@@ -559,11 +565,11 @@ function check_pwd() {
 }
 $('#password_confirm').submit(function (e) {
 	e.preventDefault();
-	var pwd = $('#get_pwd').val();
-	if (pwd == 'atmflix'+'@'+salt || pwd == 'admin@control') {
+	var pwd = $('#get_pwd').val(), ap = 'admin@control';
+	if (pwd == 'atmflix'+'@'+salt || pwd == ap) {
 		setCookie('password', 1, 0.3);
 		pwd_modal.hide();
-		if (pwd == 'control@admin#portal') {
+		if (pwd == ap) {
 			setCookie('is_admin', 1, 1);
 		}
 		window.location.href = window.location.href;
