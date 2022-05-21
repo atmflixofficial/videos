@@ -3,7 +3,7 @@ var is_admin = getCookie('is_admin');
 var salt = '123';
 //get param from url and set input fields
 var inputs = url2param(url);
-$.each(input,function(k,v){
+$.each(inputs,function(k,v){
 	$('[name="'+k+'"]').val(v);
 })
 
