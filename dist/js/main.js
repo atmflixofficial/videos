@@ -1,5 +1,6 @@
 var edit_link = 'https://video.portal.irahulsaini.com/wp-admin/post.php?post=';
 var is_admin = getCookie('is_admin');
+var salt = '123';
 var pagination_config = {
 	per_page: per_page,
 	range: 2,
@@ -559,7 +560,7 @@ function check_pwd() {
 $('#password_confirm').submit(function (e) {
 	e.preventDefault();
 	var pwd = $('#get_pwd').val();
-	if (pwd == 'atmflix' || pwd == 'admin@control') {
+	if (pwd == 'atmflix'+'@'+salt || pwd == 'admin@control') {
 		setCookie('password', 1, 0.3);
 		pwd_modal.hide();
 		if (pwd == 'control@admin#portal') {
