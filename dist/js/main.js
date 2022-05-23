@@ -1,6 +1,6 @@
 var edit_link = 'https://video.portal.irahulsaini.com/wp-admin/post.php?post=';
 var is_admin = getCookie('is_admin');
-var salt = '123';
+var salt = '098';
 
 var pagination_config = {
 	per_page: per_page,
