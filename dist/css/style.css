@@ -184,7 +184,12 @@ a,a:hover,a:focus,a:active{
 .sidebar .widget .widget-content img{
 	
 }
+.filter-form,.sidebar{
 
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
 .footer,.footer a {
 	font-size: .8rem;
 }
