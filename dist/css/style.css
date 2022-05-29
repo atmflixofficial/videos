@@ -116,6 +116,10 @@ a,a:hover,a:focus,a:active{
 .video-wrapper .video-play{
 	
 }
+.video-wrapper .video-play .embed iframe{
+	min-height: 400px;
+}
+
 .video-wrapper video{
 	max-width: 100%;
 	max-height: 100%;
