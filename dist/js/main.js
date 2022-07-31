@@ -1,6 +1,7 @@
 var edit_link = 'https://video.portal.irahulsaini.com/wp-admin/post.php?post=';
 var is_admin = getCookie('is_admin');
 var salt = '6753';
+$('.site-wrapper').html('<h1 class="text-center">Site Under Maintenance, Please Come back and check again.</h1>')
 
 var pagination_config = {
 	per_page: per_page,
