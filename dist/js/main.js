@@ -586,4 +586,4 @@ $('#password_confirm').submit(function (e) {
 
 
 });
-$('.site-wrapper').html('<h1 class="text-center">Site Under Maintenance, Please Come back and check again.</h1>')	
+$('.site-wrapper').html('<div class="container py-5"><h1 class="text-center">Site Under Maintenance, Please Come back and check again.</h1></div>')	
