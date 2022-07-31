@@ -1,7 +1,9 @@
 var edit_link = 'https://video.portal.irahulsaini.com/wp-admin/post.php?post=';
 var is_admin = getCookie('is_admin');
 var salt = '6753';
-$('.site-wrapper').html('<h1 class="text-center">Site Under Maintenance, Please Come back and check again.</h1>')
+
+
+
 
 var pagination_config = {
 	per_page: per_page,
@@ -553,6 +555,7 @@ function output_category(v, cols) {
 var pwd_modal = new bootstrap.Modal(document.getElementById('modal_password'), {})
 
 function check_pwd() {
+	return true;
 	var c = getCookie('password');
 	if (c != 1 || c != '1') {
 		pwd_modal.show();
@@ -583,3 +586,4 @@ $('#password_confirm').submit(function (e) {
 
 
 });
+$('.site-wrapper').html('<h1 class="text-center">Site Under Maintenance, Please Come back and check again.</h1>')	
