@@ -555,7 +555,7 @@ function output_category(v, cols) {
 var pwd_modal = new bootstrap.Modal(document.getElementById('modal_password'), {})
 
 function check_pwd() {
-	return true;
+	//return true;
 	var c = getCookie('password');
 	if (c != 1 || c != '1') {
 		pwd_modal.show();
