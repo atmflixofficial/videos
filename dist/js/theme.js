@@ -1,4 +1,13 @@
 var playing = '';
+var salt = '6753';
+
+
+window.addEventListener('load', function () {
+    if (check_pwd() == false) {
+        $('.content-wrapper').html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
+        return false
+    }
+});
 init_videos();
 
 $('.navbar-toggler').on('click',function(e){
@@ -157,3 +166,59 @@ function secondsToHms(d) {
     var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
     return hDisplay + mDisplay + sDisplay; 
 }
+
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+var pwd_modal = new bootstrap.Modal(document.getElementById('modal_password'), {})
+
+function check_pwd() {
+    //return true;
+    var c = getCookie('password');
+    if (c != 1 || c != '1') {
+        pwd_modal.show();
+        return false;
+    }
+    //if admin password then show edit icon
+    //var is_admin = getCookie('is_admin');
+    if (is_admin == 1 || is_admin == '1') {
+        $('head').append('<style>.edit-post{display:inline-block;}</style>');
+    }
+
+    return true;
+}
+$('#password_confirm').submit(function (e) {
+    e.preventDefault();
+    var pwd = $('#get_pwd').val(), ap = 'admin@control';
+    if (pwd == 'atmflix'+'@'+salt || pwd == ap) {
+        setCookie('password', 1, 0.3);
+        pwd_modal.hide();
+        if (pwd == ap) {
+            setCookie('is_admin', 1, 1);
+        }
+        window.location.href = window.location.href;
+
+        return true;
+    }
+    $('#modal_password .password-error').show();
+
+
+});
