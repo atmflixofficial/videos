@@ -140,7 +140,7 @@ function init_single_video(){
          if($('video source',this).attr('src')){
              return true;
          }
-         var src = $('.image img',v).attr('data-video');
+         var src = $('.video-player img',v).attr('data-video');
          var poster = $('.video-player img',v).attr('src');
          $('.video-player',v).html('<video controls muted poster="'+poster+'" preload="metadata" loop><source type="video/mp4" src="'+src+'"/></video>');
     });
