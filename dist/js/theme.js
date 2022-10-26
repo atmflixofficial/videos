@@ -169,8 +169,7 @@ function init_videos(){
 }
 
 $( ".video-item-col" ).mouseover(function(){
-    var src= $('video',this).attr('data-src');
-    console.log(src);
+    var src= $('video source',this).attr('data-src');
     $('video source',this).attr('src',src);
     $('video',this).addClass('active').trigger('play');
 }).mouseout(function() {
