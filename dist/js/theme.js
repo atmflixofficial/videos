@@ -141,7 +141,7 @@ function init_single_video(){
              return true;
          }
          var src = $('.image img',v).attr('data-video');
-         var poster = $('.image img',v).attr('src');
+         var poster = $('.video-player img',v).attr('src');
          $('.video-player',v).html('<video controls muted poster="'+poster+'" preload="metadata" loop><source type="video/mp4" src="'+src+'"/></video>');
     });
     const players = Array.from(document.querySelectorAll('.video-item video')).map((p) => new Plyr(p));
