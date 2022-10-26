@@ -144,7 +144,7 @@ $('#index .btn-load-more').on('click',function(e){
             }
             var data = $('#main .videos-row',$(response)).html();
 
-            $('#main .videos-row').append(data);
+            $('#index .videos-row').append(data);
             init_videos();
             href = $('#index .btn-load-more',$(response)).attr('href');
             if(href == 'javascript:void(0)'){
