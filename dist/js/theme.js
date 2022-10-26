@@ -2,9 +2,6 @@ var playing = '';
 var salt = '123';
 var is_admin = false;
 
-if (check_pwd() == false) {
-    $('.content-wrapper').html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
-}
 
 
 init_videos();
@@ -239,7 +236,6 @@ function getCookie(cname) {
     }
     return "";
 }
-var pwd_modal = new bootstrap.Modal(document.getElementById('modal_password'), {})
 
 function check_pwd() {
     //return true;
