@@ -174,13 +174,16 @@ function init_videos(){
     //const players = Array.from(document.querySelectorAll('.video-item-col video')).map((p) => new Plyr(p));
 }
 
-$( ".video-item-col" ).mouseover(function(){
+
+$(document).on("mouseenter", ".video-item-col", function(e) {
     var src= $('video source',this).attr('data-src');
     //$('video source',this).attr('src',src);
     $('video',this).addClass('active');
     var vid = $('video',this);
     $(vid).trigger('play');
-}).mouseout(function() {
+});
+
+$(document).on("mouseleave", ".video-item-col", function(e) {
     $('video',this).trigger('stop').removeClass('active');
     //$('video source',this).attr('src','');
 });
