@@ -161,6 +161,7 @@ a,a:hover,a:focus,a:active{
 #st-1 .st-btn .st-text{
 	white-space: nowrap!important;
 }
+/*
 .sidebar .widget{
 	--bs-bg-opacity: .5;
     background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity));
@@ -190,6 +191,7 @@ a,a:hover,a:focus,a:active{
     top: 0;
     z-index: 1020;
 }
+
 .footer,.footer a {
 	font-size: .8rem;
 }
@@ -199,3 +201,4 @@ a,a:hover,a:focus,a:active{
 .copyright{
 	background: #000;
 }
+*/
