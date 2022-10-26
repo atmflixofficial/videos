@@ -131,8 +131,8 @@ function init_videos(){
     $('.video-item-col').each(function(k,v){
 
         var img = $('img',v).attr('src');
-        var duration = $('duration',v).attr('data-duration');
-        $(v).html('<img class="featured" src="'+img+'"><div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+duration+'</span></div>');
+        var duration = $('.duration',v).attr('data-duration');
+        $('.image',v).html('<img class="featured" src="'+img+'"><div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+duration+'</span></div>');
     });
     const players = Array.from(document.querySelectorAll('.video-item video')).map((p) => new Plyr(p));
 
