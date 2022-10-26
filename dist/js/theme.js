@@ -174,7 +174,9 @@ function init_videos(){
 $( ".video-item-col" ).mouseover(function(){
     var src= $('video source',this).attr('data-src');
     $('video source',this).attr('src',src);
-    $('video',this).addClass('active').trigger('play');
+    $('video',this).addClass('active');
+    var vid = $('video',this);
+    $(vid).trigger('play');
 }).mouseout(function() {
     $('video',this).trigger('stop').removeClass('active');
     $('video source',this).attr('src','');
