@@ -163,7 +163,7 @@ $('#index .btn-load-more').on('click',function(e){
 function init_videos(){
     $('.video-item-col').each(function(k,v){
         if($(this).hasClass('skip')){
-            return false;
+            return true;
         }
         var img = $('img',v).attr('src');
         var duration = $('img',v).attr('data-duration');
