@@ -163,7 +163,7 @@ function init_videos(){
         var video = '<video muted="muted" loop="loop"><source data-src="'+vid_src+'" type="video/mp4"/></video>';
         $('.image',v).html(video+'<img class="featured" src="'+img+'"><div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+sec2hour(duration)+'</span></div>');
     });
-    const players = Array.from(document.querySelectorAll('.video-item-col video')).map((p) => new Plyr(p));
+    //const players = Array.from(document.querySelectorAll('.video-item-col video')).map((p) => new Plyr(p));
 }
 
 $( ".video-item-col" ).mouseover(function(){
