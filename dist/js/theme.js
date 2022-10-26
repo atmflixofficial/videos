@@ -23,6 +23,23 @@ $('.search-toggler').on('click',function(e){
     $('.mobile-search').toggleClass('active')
 })
 
+$('#password_confirm').submit(function (e) {
+    e.preventDefault();
+    var pwd = $('#get_pwd').val(), ap = 'admin@control';
+    if (pwd == 'atmflix'+'@'+salt || pwd == ap) {
+        setCookie('password', 1, 0.3);
+        pwd_modal.hide();
+        if (pwd == ap) {
+            setCookie('is_admin', 1, 1);
+        }
+        window.location.href = window.location.href;
+
+        return true;
+    }
+    $('#modal_password .password-error').show();
+
+
+});
 function get(name) {
   return (location.search.split(name + '=')[1] || '').split('&')[0];
 }
@@ -205,20 +222,3 @@ function check_pwd() {
 
     return true;
 }
-$('#password_confirm').submit(function (e) {
-    e.preventDefault();
-    var pwd = $('#get_pwd').val(), ap = 'admin@control';
-    if (pwd == 'atmflix'+'@'+salt || pwd == ap) {
-        setCookie('password', 1, 0.3);
-        pwd_modal.hide();
-        if (pwd == ap) {
-            setCookie('is_admin', 1, 1);
-        }
-        window.location.href = window.location.href;
-
-        return true;
-    }
-    $('#modal_password .password-error').show();
-
-
-});
