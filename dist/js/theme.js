@@ -147,6 +147,7 @@ $('#index .btn-load-more').on('click',function(e){
             $('#main .videos-row').append(data);
             init_videos();
             href = $('#main .btn-load-more',$(response)).attr('href');
+            console.log(href);
             if(href == 'javascript:void(0)'){
                 $($loader.parent()).html('That\'s all we have!')
             }
