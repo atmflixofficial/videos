@@ -94,6 +94,10 @@ $(document).ready(function(){
     if(query){
         $('[name="q"]').val(decodeURI(query.replace(/\+/g,' ')));
     }
+    $.appear('.btn-load-more');
+    $('.btn-load-more').on('appear',function(e,$a){
+        $(this).trigger('click')
+    }) 
 })
 $('#index .btn-load-more').on('click',function(e){
     e.preventDefault();
