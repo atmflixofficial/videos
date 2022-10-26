@@ -158,7 +158,7 @@ function init_videos(){
     $('.video-item-col').each(function(k,v){
         var img = $('img',v).attr('src');
         var duration = $('img',v).attr('data-duration');
-        $('.image',v).html('<img class="featured" src="'+img+'"><div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+secondsToHms(duration)+'</span></div>');
+        $('.image',v).html('<img class="featured" src="'+img+'"><div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+sec2hour(duration)+'</span></div>');
     });
     const players = Array.from(document.querySelectorAll('.video-item video')).map((p) => new Plyr(p));
 }
@@ -183,6 +183,12 @@ function secondsToHms(d) {
     var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
     var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
     return hDisplay + mDisplay + sDisplay; 
+}
+
+
+function sec2hour(s) {
+    return new Date(s * 1000).toISOString().substr(11, 8);
+
 }
 
 function setCookie(cname, cvalue, exdays) {
