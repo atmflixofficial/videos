@@ -143,6 +143,7 @@ $('#index .btn-load-more').on('click',function(e){
                 return;
             }
             var data = $('#main .videos-row',$(response)).html();
+
             $('#main .videos-row').append(data);
             init_videos();
             href = $('#main .btn-load-more',$(response)).attr('href');
@@ -197,8 +198,8 @@ function secondsToHms(d) {
 
 
 function sec2hour(s) {
+    console.log(s)
     return new Date(s * 1000).toISOString().substr(11, 8);
-
 }
 
 function setCookie(cname, cvalue, exdays) {
