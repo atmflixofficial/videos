@@ -2,13 +2,11 @@ var playing = '';
 var salt = '123';
 var is_admin = false;
 
+if (check_pwd() == false) {
+    $('.content-wrapper').html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
+}
 
-window.addEventListener('load', function () {
-    if (check_pwd() == false) {
-        $('.content-wrapper').html('<h3 class="text-center my-3">Please Complete Password Verification</h3>')
-        return false
-    }
-});
+
 init_videos();
 
 $('.navbar-toggler').on('click',function(e){
