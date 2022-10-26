@@ -166,10 +166,10 @@ function init_videos(){
 }
 
 $( ".video-item-col" ).mouseover(function(){
-    $('video',this).attr('src',$('video',this).attr('data-src'));
+    $('video',this).attr('src',$('video',this).attr('data-src')).addClass('active');
     $('video',this).trigger('play');
 }).mouseout(function() {
-    $('video',this).trigger('stop');
+    $('video',this).trigger('stop').removeClass('active');
     $('video',this).attr('src','');
 });
 function init_single_video(){
