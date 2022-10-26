@@ -148,7 +148,7 @@ $('#index .btn-load-more').on('click',function(e){
             init_videos();
             href = $('#main .btn-load-more',$(response)).attr('href');
             console.log(href);
-            if(href == 'javascript:void(0)'){
+            if(href == 'javascript:void(0)' || !href || href.length < 1){
                 $($loader.parent()).html('That\'s all we have!')
             }
             $loader.removeAttr('disabled').html(loader_value).removeClass('disabled').attr('href',href)
