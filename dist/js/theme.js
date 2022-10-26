@@ -144,6 +144,10 @@ $('#index .btn-load-more').on('click',function(e){
             }
             var data = $('#main .videos-row',$(response)).html();
 
+            if(!data.trim()){
+                $($loader.parent()).html('That\'s all we have!');
+                return;
+            }
             $('#main .videos-row').append(data);
             init_videos();
             href = $('#main .btn-load-more',$(response)).attr('href');
