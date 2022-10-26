@@ -1,5 +1,5 @@
 var playing = '';
-var salt = '6753';
+var salt = '123';
 var is_admin = false;
 
 
