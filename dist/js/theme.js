@@ -128,7 +128,7 @@ $('#index .btn-load-more').on('click',function(e){
     })
 });
 function init_videos(){
-    $('.video-item').each(function(k,v){
+    $('.video-item-col').each(function(k,v){
 
         var img = $('img',v).attr('src');
         var duration = $('duration',v).attr('data-duration');
