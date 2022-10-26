@@ -146,6 +146,7 @@ $('#index .btn-load-more').on('click',function(e){
                 $($loader.parent()).html('That\'s all we have!');
                 return;
             }
+            $('#main .videos-row .video-item-col').addClass('skip');
             $('#main .videos-row').append(data);
             init_videos();
             href = $('#main .btn-load-more',$(response)).attr('href');
@@ -161,6 +162,9 @@ $('#index .btn-load-more').on('click',function(e){
 });
 function init_videos(){
     $('.video-item-col').each(function(k,v){
+        if($(this).hasClass('skip')){
+            return false;
+        }
         var img = $('img',v).attr('src');
         var duration = $('img',v).attr('data-duration');
         var vid_src = $('img',v).attr('data-video');;
