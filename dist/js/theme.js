@@ -155,6 +155,7 @@ $('#index .btn-load-more').on('click',function(e){
                 $($loader.parent()).html('That\'s all we have!');
                 return;
             }
+            window.history.pushState({urlPath:href},"",href);
             $loader.removeAttr('disabled').html(loader_value).removeClass('disabled').attr('href',href)
             
         }
