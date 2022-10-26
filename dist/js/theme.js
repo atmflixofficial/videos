@@ -198,7 +198,9 @@ function secondsToHms(d) {
 
 
 function sec2hour(s) {
-    console.log(s)
+    if(!s || s.length < 1){
+        return '';
+    }
     return new Date(s * 1000).toISOString().substr(11, 8);
 }
 
