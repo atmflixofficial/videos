@@ -129,10 +129,20 @@ $('#index .btn-load-more').on('click',function(e){
 });
 function init_videos(){
     $('.video-item-col').each(function(k,v){
-
         var img = $('img',v).attr('src');
         var duration = $('img',v).attr('data-duration');
         $('.image',v).html('<img class="featured" src="'+img+'"><div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+duration+'</span></div>');
+    });
+    const players = Array.from(document.querySelectorAll('.video-item video')).map((p) => new Plyr(p));
+}
+function init_single_video(){
+    $('.single-item').each(function(k,v){
+         if($('video source',this).attr('src')){
+             return true;
+         }
+         var src = $('.video-content video',v).attr('data-src');
+         var poster = $('.video-player img',v).attr('src');
+         $('.video-player',v).html('<video controls muted poster="'+poster+'" preload="metadata" loop><source type="video/mp4" src="'+src+'"/></video>');
     });
     const players = Array.from(document.querySelectorAll('.video-item video')).map((p) => new Plyr(p));
 
