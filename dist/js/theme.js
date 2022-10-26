@@ -35,14 +35,16 @@ function shuffle(array) {
   return array;
 }
 var count = 0;
-$(shuffle(categories)).each(function(k,v){
-    if(count == 5){
-        return true;
-    }
-    var item = '<div class="d-flex align-items-center mb-2"><div class="image"><img src="https://atmreel.b-cdn.net/images/thumbs/'+v.name+'.jpg"/></div><div class="content w-100 mx-2"><div class="name fw-bold">'+v.name+'</div><div class="small text-muted">'+v.count+' vClips</div></div><div class="link"><a href="'+v.url+'" class="btn btn-primary btn-sm">Explore</a></div></div>';
-    $('#explore .item_list').append(item);
-    count++;
-});
+if(categories.length > 0){
+    $(shuffle(categories)).each(function(k,v){
+        if(count == 5){
+            return true;
+        }
+        var item = '<div class="d-flex align-items-center mb-2"><div class="image"><img src="https://atmreel.b-cdn.net/images/thumbs/'+v.name+'.jpg"/></div><div class="content w-100 mx-2"><div class="name fw-bold">'+v.name+'</div><div class="small text-muted">'+v.count+' vClips</div></div><div class="link"><a href="'+v.url+'" class="btn btn-primary btn-sm">Explore</a></div></div>';
+        $('#explore .item_list').append(item);
+        count++;
+    });
+}
 $(shuffle(trendings)).each(function(k,v){
     var item = '<div class="d-flex align-items-center mb-2"><div class="image"><img src="'+v.image+'"/></div><div class="content w-100 mx-2"><div class="name">'+v.title+'</div></div><div class="link"><a href="'+v.url+'" class="btn btn-primary btn-sm rounded-circle"><i class="fa fa-play-circle"></i></a></div></div>';
     $('#trending .item_list').append(item);
