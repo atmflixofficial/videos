@@ -144,9 +144,9 @@ $('#index .btn-load-more').on('click',function(e){
             }
             var data = $('#main .videos-row',$(response)).html();
 
-            $('#index .videos-row').append(data);
+            $('#main .videos-row').append(data);
             init_videos();
-            href = $('#index .btn-load-more',$(response)).attr('href');
+            href = $('#main .btn-load-more',$(response)).attr('href');
             if(href == 'javascript:void(0)'){
                 $($loader.parent()).html('That\'s all we have!')
             }
@@ -167,11 +167,11 @@ function init_videos(){
 }
 
 $( ".video-item-col" ).mouseover(function(){
-    $('video source',this).attr('src',$('video',this).attr('data-src')).addClass('active');
-    $('video',this).trigger('play');
+    $('video source',this).attr('src',$('video',this).attr('data-src'));
+    $('video',this).addClass('active').trigger('play');
 }).mouseout(function() {
-    $('video',this).trigger('stop');
-    $('video source',this).attr('src','').removeClass('active');
+    $('video',this).trigger('stop').removeClass('active');
+    $('video source',this).attr('src','');
 });
 function init_single_video(){
     $('.single-item').each(function(k,v){
