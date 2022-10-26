@@ -1,5 +1,6 @@
 var playing = '';
 var salt = '6753';
+var is_admin = false;
 
 
 window.addEventListener('load', function () {
