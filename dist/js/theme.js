@@ -165,7 +165,7 @@ function init_videos(){
         var img = $('img',v).attr('src');
         var duration = $('img',v).attr('data-duration');
         var vid_src = $('img',v).attr('data-video');;
-        var video = '<video muted="muted" loop="loop"><source data-src="'+vid_src+'" type="video/mp4"/></video>';
+        var video = '<video muted="muted" loop="loop"><source src="'+vid_src+'" type="video/mp4"/></video>';
         $('.image',v).html(video+'<img class="featured" src="'+img+'"><div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+sec2hour(duration)+'</span></div>');
     });
     //const players = Array.from(document.querySelectorAll('.video-item-col video')).map((p) => new Plyr(p));
@@ -173,13 +173,13 @@ function init_videos(){
 
 $( ".video-item-col" ).mouseover(function(){
     var src= $('video source',this).attr('data-src');
-    $('video source',this).attr('src',src);
+    //$('video source',this).attr('src',src);
     $('video',this).addClass('active');
     var vid = $('video',this);
     $(vid).trigger('play');
 }).mouseout(function() {
     $('video',this).trigger('stop').removeClass('active');
-    $('video source',this).attr('src','');
+    //$('video source',this).attr('src','');
 });
 function init_single_video(){
     $('.single-item').each(function(k,v){
