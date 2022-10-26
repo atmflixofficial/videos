@@ -93,7 +93,7 @@ function related_post(){
     }
     
     $(shuffle(post_category)).each(function(i,d){
-        $('#category_info h6').css('backgroundImage','url("https://atmreel.b-cdn.net/images/thumbs/'+d+'.jpg")');
+        $('#category_info h6').css('backgroundImage','url("https://atmflixofficial.github.io/videos/dist/images/categories/'+d+'.jpg")');
         $('#category_info h6 span').append(' in '+d)
         $.get('/feeds/posts/default/-/'+encodeURI(d)+'?alt=json',function(response){
             var posts = response.feed.entry;
