@@ -67,7 +67,7 @@ if(categories.length > 0){
         if(count == 5){
             return true;
         }
-        var item = '<div class="d-flex align-items-center mb-2"><div class="image"><img src="https://atmflixofficial.github.io/videos/dist/images/categories/'+v.name+'.jpg"/></div><div class="content w-100 mx-2"><div class="name fw-bold">'+v.name+'</div><div class="small text-muted">'+v.count+' vClips</div></div><div class="link"><a href="'+v.url+'" class="btn btn-primary btn-sm">Explore</a></div></div>';
+        var item = '<div class="d-flex align-items-center mb-2"><div class="image"><img src="https://atmflixofficial.github.io/videos/dist/images/categories/'+v.name+'.jpg"/></div><div class="content w-100 mx-2"><div class="name fw-bold">'+v.name+'</div><div class="small text-muted">'+v.count+' vClips</div></div><div class="link"><a href="'+v.url+'" class="btn btn-dark btn-sm">Explore</a></div></div>';
         $('#explore .item_list').append(item);
         count++;
     });
