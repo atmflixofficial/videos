@@ -75,7 +75,7 @@ $(shuffle(trendings)).each(function(k,v){
 function explore_categories(){
     var html = '';
     $(shuffle(categories)).each(function(k,v){
-        var item = '<div class="col-6 col-md-4 pb-2"><a href="'+v.url+'" class="d-block category-item theme-border-color"><div class="image"><img src="https://atmflixofficial.github.io/videos/dist/images/categories/'+v.name+'.jpg"/></div><div class="content w-100"><div class="name d fw-bold">'+v.name+'</div><div class="small">'+v.count+' Videos</div></div></a></div>';
+        var item = '<div class="col-6 col-md-4"><a href="'+v.url+'" class="d-block category-item theme-border-color"><div class="image"><img src="https://atmflixofficial.github.io/videos/dist/images/categories/'+v.name+'.jpg"/></div><div class="content w-100"><div class="name d fw-bold">'+v.name+'</div><div class="small">'+v.count+' Videos</div></div></a></div>';
         html += item;
         count++;
     });
@@ -152,6 +152,7 @@ $('#index .btn-load-more').on('click',function(e){
                 return;
             }
             //window.history.pushState({urlPath:href},"",href);
+            change_url('Next Page',href);
             $loader.removeAttr('disabled').html(loader_value).removeClass('disabled').attr('href',href)
             
         }
@@ -251,4 +252,11 @@ function check_pwd() {
     }
 
     return true;
+}
+
+function change_url(title, url) {
+    if (typeof (history.pushState) != "undefined") {
+        var obj = { Title: title, Url: url };
+        history.pushState(obj, obj.Title, obj.Url);
+    }
 }
