@@ -75,7 +75,7 @@ $(shuffle(trendings)).each(function(k,v){
 function explore_categories(){
     var html = '';
     $(shuffle(categories)).each(function(k,v){
-        var item = '<div class="col-md-6 pb-2"><div class="p-1 d-flex align-items-center h-100 border"><div class="image"><img src="https://atmflixofficial.github.io/videos/dist/images/categories/'+v.name+'.jpg"/></div><div class="content w-100 mx-2"><div class="name fw-bold">'+v.name+'</div><div class="small text-muted">'+v.count+' Videos</div></div><div class="link"><a href="'+v.url+'" class="btn btn-secondary btn-sm">Explore</a></div></div></div>';
+        var item = '<div class="col-md-6 pb-2"><div class="p-1 d-flex align-items-center h-100 theme-border-color border"><div class="image"><img src="https://atmflixofficial.github.io/videos/dist/images/categories/'+v.name+'.jpg"/></div><div class="content w-100 mx-2"><div class="name fw-bold">'+v.name+'</div><div class="small text-muted">'+v.count+' Videos</div></div><div class="link"><a href="'+v.url+'" class="btn btn-secondary btn-sm">Explore</a></div></div></div>';
         html += item;
         count++;
     });
