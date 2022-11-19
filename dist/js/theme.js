@@ -165,8 +165,10 @@ function init_videos(){
         }
         var img = $('img',v).attr('src');
         var duration = $('img',v).attr('data-duration');
-        var vid_src = $('img',v).attr('data-video');;
-        var video = '<video muted="muted" loop="loop"><source src="'+vid_src+'" type="video/mp4"/></video>';
+        var domain = $('img',v).attr('data-domain');
+        var path = $('img',v).attr('data-path');
+        var file = $('img',v).attr('data-file');
+        var video = '<video muted="muted" loop="loop"><source src="'+domain+path+file+'" type="video/mp4"/></video>';
         $('.image',v).html(video+'<img class="featured" src="'+img+'"><div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+sec2hour(duration)+'</span></div>');
     });
     //const players = Array.from(document.querySelectorAll('.video-item-col video')).map((p) => new Plyr(p));
@@ -191,8 +193,12 @@ function init_single_video(){
              return true;
          }
          var src = $('.video-player img',v).attr('data-video');
+         var domain = $('.video-player img',v).attr('data-domain');
+         var path = $('.video-player img',v).attr('data-path');
+         var file = $('.video-player img',v).attr('data-file');
+        
          var poster = $('.video-player img',v).attr('src');
-         $('.video-player',v).html('<video controls muted poster="'+poster+'" preload="metadata" loop><source type="video/mp4" src="'+src+'"/></video>');
+         $('.video-player',v).html('<video controls muted poster="'+poster+'" preload="metadata" loop><source type="video/mp4" src="'+domain+path+file+'"/></video>');
     });
     const players = Array.from(document.querySelectorAll('.single-item video')).map((p) => new Plyr(p));
 }
