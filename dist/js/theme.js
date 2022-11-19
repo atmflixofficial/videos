@@ -198,7 +198,7 @@ function init_single_video(){
          var file = $('.video-player img',v).attr('data-file');
         
          var poster = $('.video-player img',v).attr('src');
-         $('.video-player',v).html('<video controls muted poster="'+poster+'" preload="metadata" loop><source type="video/mp4" src="'+domain+path+file+'"/></video>');
+         $('.video-player',v).html('<video controls muted poster="'+poster+'" preload="metadata" loop><source type="video/mp4" src="'+domain+path+'/'+file+'"/></video>');
     });
     const players = Array.from(document.querySelectorAll('.single-item video')).map((p) => new Plyr(p));
 }
