@@ -168,7 +168,7 @@ function init_videos(){
         var domain = $('img',v).attr('data-domain');
         var path = $('img',v).attr('data-path');
         var file = $('img',v).attr('data-file');
-        var video = '<video muted="muted" loop="loop"><source src="'+domain+path+file+'" type="video/mp4"/></video>';
+        var video = '<video muted="muted" loop="loop"><source src="'+domain+path+'/'+file+'" type="video/mp4"/></video>';
         $('.image',v).html(video+'<img class="featured" src="'+img+'"><div class="video-meta"><span class="duration"><i class="fa fa-clock me-1"></i>'+sec2hour(duration)+'</span></div>');
     });
     //const players = Array.from(document.querySelectorAll('.video-item-col video')).map((p) => new Plyr(p));
